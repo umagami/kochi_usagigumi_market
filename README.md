@@ -11,7 +11,7 @@
 - has_many :items
 - has_many :comments, dependent: :destroy
 - has_many :destinations, dependent: :destroy
-- has_many :credit_infomations, dependent: :destroy 
+- has_many :cards, dependent: :destroy 
 - has_one :user_profiles, dependent: :destroy
 
 ## user_profilesテーブル
@@ -43,17 +43,14 @@
 - belongs_to :user
 - Gem :jp_prefectuer
 
-## Credit_infomationsテーブル
+## Cardsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|card_number|integer|null: false|unique: true|
-|card_year|integer|null: false|
-|card_month|integer|null: false|
-|security_code|integer|null: false|
+|customer_token|string|null: false|
 |user_id|references|null: false, foreign_key: true|
 ### Association
 - belongs_to :user
-- Gem :attr-encrypted
+- Gem :payjp
 
 ## commentsテーブル
 |Column|Type|Options|
