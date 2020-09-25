@@ -10,8 +10,8 @@
 ### Association
 - has_many :items
 - has_many :comments, dependent: :destroy
-- has_many :destination, dependent: :destroy
-- has_many :credit_infomation, dependent: :destroy 
+- has_many :destinations, dependent: :destroy
+- has_many :credit_infomations, dependent: :destroy 
 - has_one :user_profiles, dependent: :destroy
 
 ## user_profilesテーブル
@@ -21,9 +21,7 @@
 |family_name|string|null: false|
 |kana_first_name|string|null: false|
 |kana_family_name|string|null: false|
-|birth_year|data|null: false|
-|birth_month|data|null: false|
-|dirth_day|data|null: false|
+|birthday|date|null: false|
 |user_id|references|null: false, foreign_key: true|
 ### Association
 - belongs_to :user
@@ -35,11 +33,11 @@
 |destination_family_name|string|null: false|
 |destination_kana_first_name|string|null: false|
 |destination_kana_family_name|string|null: false|
-|post_code|integer(7)|null: false|
+|post_code|string|null: false|
 |city|string|null: false|
 |house_number|string|null: false|
 |building_name|string||
-|phone_number|integer|unique :true|
+|phone_number|string|unique :true|
 |user_id|references|null: false, foreign_key: true|
 ### Association
 - belongs_to :user
@@ -55,6 +53,7 @@
 |user_id|references|null: false, foreign_key: true|
 ### Association
 - belongs_to :user
+- Gem :attr-encrypted
 
 ## commentsテーブル
 |Column|Type|Options|
@@ -76,10 +75,9 @@
 |prefecture_code|integer|null: false|
 |category_id|references|null: false, foreign_key: true|
 |brand_id|references|null: false, foreign_key: true|
-|item_condition_id|references|null: false, foreign_key: true|
-|item_image_id|references|null: false, foreign_key: true|
-|postage_payer_id|references|null: false, foreign_key: true|
-|preparation_day|references|null: false, foreign_key: true|
+|item_condition_id|integer|null: false|
+|postage_payer_id|integer|null: false|
+|preparation_day|integer|null: false|
 |user_id|references|null: false, foreign_key: true|
 ### Association
 - has_many :comments, dependent :destroy
@@ -103,7 +101,7 @@
 ## Brandsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|name|string||
+|name|string|null: false|
 ### Association
 - has_many :items
 
@@ -113,26 +111,5 @@
 |ancestry|string|null: false|
 |name|string|null: false|
 ### Association
-- has_many :item
-
-## item_conditionsテーブル
-|Column|Type|Options|
-|------|----|-------|
-|item_condition|string|null: false|
-### Association
-- has_many :item
-
-## postage_payersテーブル
-|Column|Type|Options|
-|------|----|-------|
-|postage_payer|string|null: false|
-### Association
-- has_many :item
-
-## preparation_daysテーブル
-|Column|Type|Options|
-|------|----|-------|
-|preparation_day|string|null: false|
-### Association
-- has_many :item
+- has_many :items
 
