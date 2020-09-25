@@ -10,7 +10,7 @@
 ### Association
 - has_many :items
 - has_many :comments, dependent: :destroy
-- has_many :destination dependent: :destroy
+- has_many :destination, dependent: :destroy
 - has_many :credit_infomation, dependent: :destroy 
 - has_one :user_profiles, dependent: :destroy
 
@@ -83,7 +83,8 @@
 |user_id|references|null: false, foreign_key: true|
 ### Association
 - has_many :comments, dependent :destroy
-- has_many :item_images, dependent :destroy - belongs_to :user
+- has_many :item_images, dependent :destroy 
+- belongs_to :user
 - belongs_to :category
 - belongs_to :brand
 - belongs_to_active_hash :item_condition
