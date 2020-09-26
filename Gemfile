@@ -68,3 +68,9 @@ gem "haml-rails", ">= 1.0", '<= 2.0.1'
 gem 'pry-rails'
 gem 'devise'
 gem 'jquery-rails'
+#カテゴリー情報
+gem 'ancestry'
+#クレジットカード情報
+gem 'payjp'
+#ハッシュデータの作成・使用
+gem 'active_hash'
