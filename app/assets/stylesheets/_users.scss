@@ -1,0 +1,227 @@
+.sessions-top {
+  height: 100vh;
+  background-color:#eee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  
+  .icon1 {
+    display: block;
+    padding-top: 40px;
+  }
+
+  .sessions-middle {
+    
+    .middle-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-direction: column;
+      border: 1px solid white;
+      padding: 50px;
+      background-color:#f8f8f8;
+
+      p {
+        font-size: 14px;
+      }
+
+      .registration-button {
+        font-size: 14px;
+        color: black;
+        text-decoration: none;
+        margin: 10px;
+        background-color: lightcoral;
+        border: solid 2px black;
+        border-radius: 5px;
+        padding: 5px 50px 5px 50px
+      }
+    }
+
+    .middle-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-direction: column;
+      border: 1px solid white;
+      padding: 30px;
+      margin-top: 2px;
+      background-color:#f8f8f8;
+
+      .mail {
+        font-size: 14px;
+        font-weight: bold;
+      }
+
+      .password {
+        font-size: 14px;
+        font-weight: bold;
+      }
+
+      .login-button {
+        background-color: khaki;
+        height: 30px;
+        width: 200px;
+        margin: 20px;
+        font-size: 14px;
+        border-radius: 5px;
+      }
+
+      .forget-password {
+        text-decoration: none;
+        color: deepskyblue;
+      }
+    }
+  }
+
+  .icon2 {
+    display: block;
+    padding-bottom: 40px;
+  }
+}
+
+.registrations-top {
+  height: 150vh;
+  background-color:#eee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  
+  .icon1 {
+    display: block;
+    padding-top: 40px;
+  }
+
+  .new_user {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 10px;
+
+    .registrations-middle-top {
+      height: 100px;
+      width: 50vw;
+      background-color: #f8f8f8;
+      display: flex;
+      align-items: center;
+      margin: 2px ;
+      margin-top: 10px;
+      border: 1px solid white;
+
+      p {
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 23px;
+        font-weight: bold;
+      }
+    }
+
+    .registrations-middle-bottom {
+      height: 750px;
+      width: 50vw;
+      background-color: #f8f8f8;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      margin-bottom: 10px;
+      border: 1px solid white;
+
+      .field {
+        padding-top: 20px;
+        
+        em {
+          font-size: 13px;
+          font-weight: bold;
+        }
+
+        span {
+          margin-left: 10px;
+          padding: 2px 4px;
+          font-size: 12px;
+          background-color: red;
+          height: 14px;
+          width: 20px;
+          color: white;
+          border-radius: 3px;
+        }
+      }
+      
+      ul {
+        font-weight: bold;
+      }
+
+      li {
+        list-style: none;
+        font-size: 14px;
+        height: 0;
+      }
+
+      .field-font {
+        font-size: 13px;
+        font-weight: bold;
+      }
+
+      .personal-information {
+
+        .family-name-kanji {
+          padding-top: 20px;
+
+          span {
+            margin-left: 10px;
+            padding: 2px 4px;
+            font-size: 12px;
+            background-color: red;
+            height: 14px;
+            width: 20px;
+            color: white;
+            border-radius: 3px;
+          }
+        }
+
+        .family-name-kana {
+          padding-top: 20px;
+
+          span {
+            margin-left: 10px;
+            padding: 2px 4px;
+            font-size: 12px;
+            background-color: red;
+            height: 14px;
+            width: 20px;
+            color: white;
+            border-radius: 3px;
+          }
+        }
+
+        .birthday {
+          padding-top: 20px;
+
+        }
+
+        span {
+          margin-left: 10px;
+          padding: 2px 4px;
+          font-size: 12px;
+          background-color: red;
+          height: 14px;
+          width: 20px;
+          color: white;
+          border-radius: 3px;
+        }
+      }
+
+      .registration-btn {
+        padding: 5px 100px;
+        margin-top: 30px;
+        background-color: lightcoral;
+        border-radius: 5px;
+      }
+    }
+  }
+  .icon2 {
+    display: block;
+    padding-bottom: 40px;
+  }
+}
