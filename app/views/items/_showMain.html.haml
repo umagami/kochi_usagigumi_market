@@ -1,0 +1,108 @@
+.main
+  .showMain
+    .contents
+      .topContent
+        .itemInfo
+          .itemInfo__itemName
+            test
+          .itemInfo__itemImage
+          .itemInfo__itemPrice
+            %span ¥1000
+            .itemInfo__itemPrice__priceOption
+              送料込み
+          .itemInfo__introduction
+            赤味噌よりも白味噌
+          .itemTable
+            %table
+              %tr
+                %th 出品者
+                %td あああ
+              %tr
+                %th カテゴリー
+                %td
+                  %a{:href => "#"} レディース
+                  %br/
+                  %a{:href => "#"} トップス
+                  %br/
+                  %a{:href => "#"} Tシャツ/カットソー(半袖/袖なし)
+              %tr
+                %th ブランド
+                %td
+              %tr
+                %th 商品のサイズ
+                %td
+              %tr
+                %th 商品の状態
+                %td 新品/未使用
+              %tr
+                %th 配送料の負担
+                %td 送料込み（出品者負担）
+              %tr
+                %th 発送元の地域
+                %td
+                  %a{:href => "#"} 北海道
+              %tr
+                %th 発送日の目安
+                %td 1-2日で発送
+
+          .option
+        .commentInfo
+          %form#new_comment.new_comment{"accept-charset" => "UTF-8", :action => "", :method => "post"}
+            %input{:name => "utf8", :type => "hidden", :value => ""}/
+            %input{:name => "authenticity_token", :type => "hidden", :value => ""}/
+            %textarea#comment_body{:name => "comment[body]", :required => "required"}
+            %p.noticeMsg
+              相手のことを考え丁寧なコメントを心がけましょう。
+              %br/
+              不快な言葉遣いなどは利用制限や退会処分となることがあります。
+            %br/
+            %button.commentBtn{:name => "button", :type => "submit"}
+              %i.fa.fa-comment
+              コメントする
+        .link
+          %ul.links
+            %li
+              %a{:href => "#"}
+                %i.link-left
+                %span < 前の商品
+            %li
+              %a{:href => "#"}
+                %i.link-right
+                %span 後ろの商品 >
+        .etcItems
+          %a{:href => "#"} レディースをもっと見る
+        .productLists
+          .productContent
+            %figure.productContent__image
+              .productContent__image__main
+                %img{:src => "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/7/a001.png"}/
+            .productContent__info
+              %h3.name 
+                product1
+              %ul
+                %li 10000円
+              %p (税込)
+          .productContent
+            %figure.productContent__image
+              .productContent__image__main
+                %img{:src => "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/7/a001.png"}/
+            .productContent__info
+              %h3.name 
+                product1
+              %ul
+                %li 10000円
+              %p (税込)
+          .productContent
+            %figure.productContent__image
+              .productContent__image__main
+                %img{:src => "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/7/a001.png"}/
+            .productContent__info
+              %h3.name 
+                product1
+              %ul
+                %li 10000円
+              %p (税込)
+
+
+    
+
