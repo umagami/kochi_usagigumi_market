@@ -41,7 +41,7 @@
 |user_id|references|null: false, foreign_key: true|
 ### Association
 - belongs_to :user
-- Gem :jp_prefectuer
+-  belongs_to_active_hash :prefecture
 
 ## Cardsテーブル
 |Column|Type|Options|
@@ -50,7 +50,6 @@
 |user_id|references|null: false, foreign_key: true|
 ### Association
 - belongs_to :user
-- Gem :payjp
 
 ## commentsテーブル
 |Column|Type|Options|
@@ -109,3 +108,4 @@
 |name|string|null: false|
 ### Association
 - has_many :items
+- has_ancestry
