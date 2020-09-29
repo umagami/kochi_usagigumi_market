@@ -18,6 +18,7 @@
 .itemInfo {
   background-color: #fff;
   padding: 24px 40px 40px;
+  box-shadow: 0 10px 25px 0 rgba(60, 194, 235, 0.5);
   &__itemName {
     text-align: center;
     font-weight: bold;
@@ -91,14 +92,14 @@ td {
 }
 
 .commentBtn {
-box-sizing: border-box;
-line-height: 48px;
-background: #3CCACE;
-border: 1px solid #3CCACE;
-color: #fff;
-width: 60%;
-font-size: 18px;
-border-radius: 100px;
+  box-sizing: border-box;
+  line-height: 48px;
+  background: #3CCACE;
+  border: 1px solid #3CCACE;
+  color: #fff;
+  width: 60%;
+  font-size: 18px;
+  border-radius: 100px;
 }
 
 #comment_body {

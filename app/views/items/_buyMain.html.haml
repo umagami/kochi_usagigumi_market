@@ -1,0 +1,41 @@
+.buyMain
+  .confirmItem
+    .confirmItem__confirmation
+      購入内容の確認
+    .confirmItem__info
+      .confirmItem__info__content
+        .confirmItem__info__content__image
+          = image_tag "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/7/a001.png", size: "80x80", class: "infoImage"
+        .confirmItem__info__content__a
+          .confirmItem__info__content__a__b
+            味噌汁の具
+          .confirmItem__info__content__a__c
+            .d
+              送料込み（出品者負担）
+            .e
+              6000円
+    .confirmItem__price
+      .confirmItem__price__info
+        .name
+          支払い金額
+        .data
+          6000円
+    .confirmItem__payment
+      .confirmItem__payment__info
+        .name
+          支払い方法
+        .data
+          = link_to "登録してください", "#"
+    .confirmItem__destination
+      .confirmItem__destination__info
+        .name
+          配送先
+        .data
+          = link_to "登録してください", "#"
+    .confirmItem__purchase
+      .confirmItem__purchase__info
+        .text
+          配送先と支払い方法の入力を確認してください。
+        %button.submitBtn{name: "button", type: "submit"}
+          購入する
+          
