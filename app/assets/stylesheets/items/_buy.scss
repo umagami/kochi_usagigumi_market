@@ -24,7 +24,7 @@ body {
   height: 128px;
   width: auto;
   justify-content: center;
-  background-color: #272727;
+  filter: invert(0.55);
   &__logo {
     width: 185px;
     height: 54px;
@@ -37,7 +37,7 @@ body {
 
 .buyMain {
   margin: 0px auto;
-  margin-bottom: 50px;
+  margin-bottom: 15px;
   width: 700px;
   height: auto;
   background-color: #ffffff;
