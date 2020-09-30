@@ -15,6 +15,10 @@ li {
     color: black;
   }
 
+  .aa {
+    padding-left: 0;
+  }
+
   a::after {
     display: inline-block;
     color: #000;
@@ -64,6 +68,26 @@ li {
 
       li {
         margin: 10px;
+      }
+      
+      .log-out-box {
+          display: flex;
+          align-items: center;
+        .log-out {
+          margin: 10px;
+          text-decoration-line: none;
+          color: black;
+        }
+      }
+
+      .credit-box {
+        display: flex;
+        align-items: center;
+        .credit {
+          margin: 10px;
+          text-decoration-line: none;
+          color: black;
+        }
       }
     }
   }
@@ -261,6 +285,35 @@ li {
           color: lightgray;
           font-weight: bold;
         }
+      }
+    }
+  }
+
+  .out-box {
+    height: 200px;
+    width: 600px;
+    background-color:#f8f8f8;
+    margin-top:50px;
+    margin-left: 80px;
+    border: 1px solid white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .out {
+      height: 70px;
+      width: 400px;
+      background-color:lightcoral;
+      border-radius: 5px;
+      border: 1px solid white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .out-button {
+        text-align: center;
+        text-decoration-line: none;
+        color: white;
       }
     }
   }

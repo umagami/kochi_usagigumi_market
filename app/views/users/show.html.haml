@@ -43,7 +43,8 @@
       .side-box
         %li 発送元・お届け先住所変更
       .side-box
-        %li 支払い方法
+        .credit-box
+          = link_to "支払い方法", payment_method_card_path, class: "credit"
       .side-box
         %li メール/パスワード
       .side-box
@@ -51,7 +52,8 @@
       .side-box
         %li 電話番号の確認
       .side-box
-        %li ログアウト
+        .log-out-box
+          = link_to "ログアウト", out_user_path, class: "log-out"
   .main-bar
     .content
       = image_tag 'material/pict/mig.jpeg', size: "700x220", alt: "test" ,class: "natu"
