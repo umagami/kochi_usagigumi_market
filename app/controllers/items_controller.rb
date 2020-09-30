@@ -15,17 +15,23 @@ class ItemsController < ApplicationController
     @item = Item.new(item_params)
     if @item.valid? && @item.save
       redirect_to root_path
-    else 
+    else
       @item.item_images.new
       render :new and return
     end
   end
 
-  def update 
-    
-  end 
+  def update
+
+  end
 
   def show
+    @item = Item.find(params[:id])
+    @image = ItemImage.where(params[:id])
+    @category = Category.where(ancestry:nil)
+    @categoryParent = Category.find(Item.parentCategory(@item.category))
+    @itemlist = Item.all
+    @items = Item.categorySRC(@item.category).last(3)
   end
 
   def buy
@@ -34,9 +40,9 @@ class ItemsController < ApplicationController
   private
 
   def item_params
-    params.require(:item).permit(:name, :price, :introduction, :prefecture_id, 
+    params.require(:item).permit(:name, :price, :introduction, :prefecture_id,
     :category_id, :item_condition_id, :postage_payer_id,
     :preparation_day_id, item_images_attributes: [:image_url]).merge(user_id: current_user.id)
   end
-  
+
 end
