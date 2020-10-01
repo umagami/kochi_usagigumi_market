@@ -6,6 +6,14 @@
           .itemInfo__itemName
             = @item.name
           .itemInfo__itemImage
+            %ul
+              %li
+                - @image.each do |image|
+                  = image_tag image, height: '346px', width: '560px'
+                %ul
+                  - @image.each do |image|
+                    %li
+                      = image_tag image, height: '87px', width: '140px'
           .itemInfo__itemPrice
             %span 
               ¥
@@ -74,6 +82,18 @@
                   = @item.preparation_day.name
 
           .option
+            - if @item.user_id == current_user.id
+              %button.option__edit{name: "button", type: "submit"}
+                = link_to "#" do
+                  %p
+                    編集
+              %button.option__delete{name: "button", type: "submit"}
+                = link_to "#" do
+                  %p
+                    削除
+            - else
+              .option_buy
+                購入する
         .commentInfo
           %form#new_comment.new_comment{action: "", method: "post"}
             %input{name: "utf8", type: "hidden", value: ""}/
@@ -85,7 +105,6 @@
               不快な言葉遣いなどは利用制限や退会処分となることがあります。
             %br/
             %button.commentBtn{name: "button", type: "submit"}
-              %i.fa.fa-comment
               コメントする
         .link
           %ul.links
@@ -102,7 +121,7 @@
             .productContent
               %figure.productContent__image
                 .productContent__image__main
-                  %img{src: "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/7/a001.png"}/
+                  = image_tag item.item_images[0].image_url, class: "img"
               .productContent__info
                 %h3.name 
                   = item.name

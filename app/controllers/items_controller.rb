@@ -27,11 +27,10 @@ class ItemsController < ApplicationController
 
   def show
     @item = Item.find(params[:id])
-    @image = ItemImage.where(params[:id])
+    @image = ItemImage.where(id: @item.id).pluck(:image_url)
     @category = Category.where(ancestry:nil)
     @categoryParent = Category.find(Item.parentCategory(@item.category))
-    @itemlist = Item.all
-    @items = Item.categorySRC(@item.category).last(3)
+    @items = Item.categorySRC(@item.category,@item.id).last(3)
   end
 
   def buy

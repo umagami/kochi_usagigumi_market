@@ -69,7 +69,8 @@ class Item < ApplicationRecord
       return ancestryNumber
     end
 
-    def self.categorySRC(item)
+
+    def self.categorySRC(item,currentItemId)
       ancestryNumber = self.parentCategory(item)
 
       items = Item.all
@@ -90,6 +91,9 @@ class Item < ApplicationRecord
           end
         end
       end
+      itemArray.delete_if{|item|
+        item.id == currentItemId
+      }
       return itemArray
     end
 
