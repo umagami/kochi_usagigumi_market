@@ -1,6 +1,213 @@
--# %h1 Items#index
--# %p Find me in app/views/items/index.html.erb
--# %p aaa
 %body
-  = render "search"
-  -# = render "side"
+.topPage
+  = render 'header'   
+  .Main
+    %section.mainVisual
+      .content
+        %h1.content__subtitle 人生を変えるフリマアプリ
+        %p.content__text FURIMAはだれでもかんたんに出品・購入できる 
+        %p.content__text フリマアプリです
+
+        .content__btn
+          .apple
+            = image_tag 'material/icon/Download_on_the_App_Store_Badge_US-UK_blk_092917.png',alt:"apple", class:"apple"
+          .google
+            = image_tag 'material/icon/google-play-badge.png',alt:"google", class:"google"
+        
+
+    %section.riyuu
+      %h2.subtitle FURIMAが選ばれる3つの理由
+      %ul.lists
+        %li.list
+          = image_tag 'material/pict/pict-reason-01.jpg', size:"306x306",alt:"sumaho1", class:"sumahogazo1"
+          %h3.list__text
+            %span.a
+              ３分
+            ですぐに出品
+          %p.list__description スマホで入力するだけで簡単に出品できる!
+
+        %li.list
+          = image_tag 'material/pict/pict-reason-02.jpg', size:"306x306",alt:"sumaho2", class:"sumahogazo2"
+          %h3.list__text
+            %span.a
+              シンプル
+            で使いやすい
+          %p.list__description めんどくさい入力は必要なく、検索も購入もスムーズ！
+
+        %li.list
+          = image_tag 'material/pict/pict-reason-03.jpg', size:"306x306",alt:"sumaho3", class:"sumahogazo3"
+          %h3.list__text 
+            手数料
+            %span.a
+              業界最安
+          %p.list__description 最大3%でお得に出品&購入！
+
+    %section.ninnki
+      .ninnkimatome
+        %h2.subtitle
+          会員数日本一位
+        %p.text
+          FURIMAは、フリマアプリで最も人気。
+          %br
+          出品・購入回数も業界最多です！
+          %br
+          ほしかったあの商品に出会えるかもしれません。
+        .btn
+          .apple
+            = image_tag 'material/icon/Download_on_the_App_Store_Badge_US-UK_blk_092917.png',alt:"apple", class:"apple"
+          .google
+            = image_tag 'material/icon/google-play-badge.png',alt:"google", class:"google"
+
+
+    %section.tokutyou
+      %h2.head
+        FURIMAの特徴
+      .items
+        %section.item
+          %figure.item__img
+            = image_tag 'material/icon/icon-01.png', size:"213x328",alt:"icon1", class:"icon1"
+          %h3.item__subtitle
+            簡単に売り買いできる
+          %p.item__detail
+            スマホひとつで、いつでもどこでも簡単に出品・購入が可能！
+
+        %section.item
+          %figure.item__img
+            = image_tag 'material/icon/icon-03.png', size:"213x328",alt:"icon1", class:"icon1"
+          %h3.item__subtitle
+            売上金は即日振込みに対応
+          %p.item__detail
+            午前9時までに振込を依頼いただければ、翌日に指定の口座に入金いたします!
+
+        %section.item
+          %figure.item__img
+            = image_tag 'material/icon/icon-04.png', size:"213x328",alt:"icon1", class:"icon1"
+          %h3.item__subtitle
+            様々な支払いに対応
+          %p.item__detail
+            お支払いは、クレジットカードだけでなく、ポイントや売上金など多彩な方法があります。
+
+    %section.newshohin
+      %h2.head
+        ピックアップカテゴリー
+      %h3.title
+        新規投稿商品
+      .productLists
+        .productContent
+          %figure.productContent__image
+            .productContent__image__main
+              %img{src: "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/7/a001.png"}/
+          .productContent__info
+            %h3.name
+              product1
+            %ul
+              %li 10000円
+            %p (税込)
+        .productContent
+          %figure.productContent__image
+            .productContent__image__main
+              %img{src: "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/7/a001.png"}/
+          .productContent__info
+            %h3.name
+              product1
+            %ul
+              %li 10000円
+            %p (税込)
+        .productContent
+          %figure.productContent__image
+            .productContent__image__main
+              %img{src: "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/7/a001.png"}/
+          .productContent__info
+            %h3.name
+              product1
+            %ul
+              %li 10000円
+            %p (税込)
+        .productContent
+          %figure.productContent__image
+            .productContent__image__main
+              %img{src: "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/7/a001.png"}/
+          .productContent__info
+            %h3.name
+              product1
+            %ul
+              %li 10000円
+            %p (税込)
+        .productContent
+          %figure.productContent__image
+            .productContent__image__main
+              %img{src: "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/7/a001.png"}/
+          .productContent__info
+            %h3.name
+              product1
+            %ul
+              %li 10000円
+            %p (税込)
+
+    %section.akaiba
+      %h2.head
+        ピックアップブランド
+      %h3.title
+        アーカイバ
+      .productLists
+        .productContent
+          %figure.productContent__image
+            .productContent__image__main
+              %img{src: "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/7/a001.png"}/
+          .productContent__info
+            %h3.name
+              product1
+            %ul
+              %li 10000円
+            %p (税込)
+        .productContent
+          %figure.productContent__image
+            .productContent__image__main
+              %img{src: "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/7/a001.png"}/
+          .productContent__info
+            %h3.name
+              product1
+            %ul
+              %li 10000円
+            %p (税込)
+        .productContent
+          %figure.productContent__image
+            .productContent__image__main
+              %img{src: "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/7/a001.png"}/
+          .productContent__info
+            %h3.name
+              product1
+            %ul
+              %li 10000円
+            %p (税込)
+        .productContent
+          %figure.productContent__image
+            .productContent__image__main
+              %img{src: "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/7/a001.png"}/
+          .productContent__info
+            %h3.name
+              product1
+            %ul
+              %li 10000円
+            %p (税込)
+        .productContent
+          %figure.productContent__image
+            .productContent__image__main
+              %img{src: "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/7/a001.png"}/
+          .productContent__info
+            %h3.name
+              product1
+            %ul
+              %li 10000円
+            %p (税込)
+
+
+  = render 'banner'
+  
+  = render 'footer'
+
+  .purchaseBtn
+    %span.purchaseBtn__text 出品する
+    = image_tag 'material/icon/icon_camera.png',alt:"icon", class:"icon"
+  
+
