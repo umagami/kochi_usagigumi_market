@@ -10,9 +10,13 @@ class Item < ApplicationRecord
     belongs_to_active_hash :postage_payer
     belongs_to_active_hash :preparation_day
 
-    
-  def self.ladies_items_search(id)
+    accepts_nested_attributes_for :item_images
+    validates :name, :price, :introduction, :prefecture_id,
+    :category_id, :item_condition_id, :postage_payer_id,
+    :preparation_day_id, :user_id, presence: true
 
+
+  def self.ladies_items_search(id)
     items = Item.all
     items_array = []
 
@@ -26,8 +30,7 @@ class Item < ApplicationRecord
           if item.category.parent.parent_id == id
               items_array << item
           end
-
-        else 
+        else
           item.category.parent_id == id
           items_array << item
         end
@@ -36,4 +39,3 @@ class Item < ApplicationRecord
     return items_array
   end
 end
-
