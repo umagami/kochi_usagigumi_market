@@ -10,4 +10,4 @@ class Item < ApplicationRecord
     belongs_to_active_hash :postage_payer
     belongs_to_active_hash :preparation_day
 end
-s
+
