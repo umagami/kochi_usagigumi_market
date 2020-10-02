@@ -1,0 +1,18 @@
+.Header
+  .mainHeader
+    .icon
+      = image_tag 'material/logo/logo.png', size:"140x40",alt:"test", class:"icon"
+    .searchBox
+      %form{"accept-charset" => "UTF-8", :action => "#", :method => "get"}
+      %input{name: "utf8", type: "hidden", value: "✓"}/
+      %input#searchInput.searchBox--input{name: "key", placeholder: " キーワードから探す"}
+      %button.searchButton{type: "submit"}
+        .searchBox__icon
+          = image_tag 'material/icon/icon-search 1.png', size:"25x25",alt:"search", class:"search"      
+  .nav
+    .nav1
+      %p.kategori カテゴリー
+      %p.buranndo ブランド
+    .nav2
+      %p.roguinn ログイン
+      %p.toroku 新規会員登録
