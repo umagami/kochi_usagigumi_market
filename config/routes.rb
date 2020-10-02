@@ -1,11 +1,22 @@
 Rails.application.routes.draw do
   devise_for :users
   root 'items#index'
-  # get 'items/buy/:id', to: 'items#buy', as: 'buy'
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   resources :items, only: [:index, :show] do
     member do 
      get 'buy'
     end
- end
+  end
+  resources :users, only: [:index, :show] do
+    member do
+      get 'out'
+    end
+  end
+  resources :cards, only: [:index, :new, :create, :destroy] do
+    member do
+      get 'payment_method'
+      # post 'show', to: 'cards#show'
+      # post 'pay', to: 'cards#pay'
+      # post 'delete', to: 'cards#delete'
+    end
+  end
 end

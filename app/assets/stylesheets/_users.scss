@@ -1,227 +1,322 @@
-.sessions-top {
-  height: 100vh;
-  background-color:#eee;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-direction: column;
-  
-  .icon1 {
-    display: block;
-    padding-top: 40px;
+nav {
+  border-bottom: 1px solid white;
+  height: 50px;
+  background-color: #f8f8f8;
+}
+
+li {
+  display: inline-block;
+  font-size: 14px;
+  margin-top: 15px;
+
+  a {
+    text-decoration-line: none;
+    padding-left: 180px;
+    color: black;
   }
 
-  .sessions-middle {
-    
-    .middle-top {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-direction: column;
-      border: 1px solid white;
-      padding: 50px;
-      background-color:#f8f8f8;
-
-      p {
-        font-size: 14px;
-      }
-
-      .registration-button {
-        font-size: 14px;
-        color: black;
-        text-decoration: none;
-        margin: 10px;
-        background-color: lightcoral;
-        border: solid 2px black;
-        border-radius: 5px;
-        padding: 5px 50px 5px 50px
-      }
-    }
-
-    .middle-bottom {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-direction: column;
-      border: 1px solid white;
-      padding: 30px;
-      margin-top: 2px;
-      background-color:#f8f8f8;
-
-      .mail {
-        font-size: 14px;
-        font-weight: bold;
-      }
-
-      .password {
-        font-size: 14px;
-        font-weight: bold;
-      }
-
-      .login-button {
-        background-color: khaki;
-        height: 30px;
-        width: 200px;
-        margin: 20px;
-        font-size: 14px;
-        border-radius: 5px;
-      }
-
-      .forget-password {
-        text-decoration: none;
-        color: deepskyblue;
-      }
-    }
+  .aa {
+    padding-left: 0;
   }
 
-  .icon2 {
-    display: block;
-    padding-bottom: 40px;
+  a::after {
+    display: inline-block;
+    color: #000;
+    content: '>';
+    font-weight: bold;
+    padding-left:9px;
+    color: gray;
   }
 }
 
-.registrations-top {
-  height: 150vh;
-  background-color:#eee;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-direction: column;
-  
-  .icon1 {
-    display: block;
-    padding-top: 40px;
-  }
+.crumb {
+  font-weight: bold;
+  font-size: 14px;
+}
 
-  .new_user {
+.MyPageTop {
+  background-color:#eee;
+  height: 155vh;
+  display: flex;
+
+  .side-bar {
+    width: 300px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-direction: column;
-    padding-top: 10px;
+    margin-top: 50px;
+    margin-left: 150px;
 
-    .registrations-middle-top {
-      height: 100px;
-      width: 50vw;
-      background-color: #f8f8f8;
-      display: flex;
-      align-items: center;
-      margin: 2px ;
-      margin-top: 10px;
-      border: 1px solid white;
+    .side-boxes-config {
+      margin-bottom: 100px;
 
       p {
-        margin-left: auto;
-        margin-right: auto;
-        font-size: 23px;
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 5px;
+      }
+    }
+
+    .side-box {
+      height: 40px;
+      width: 250px;
+      margin-bottom: 2px;
+      border: 1px solid white;
+      font-size: 14px;
+      background-color: #f8f8f8;
+
+      li {
+        margin: 10px;
+      }
+      
+      .log-out-box {
+          display: flex;
+          align-items: center;
+        .log-out {
+          margin: 10px;
+          text-decoration-line: none;
+          color: black;
+        }
+      }
+
+      .credit-box {
+        display: flex;
+        align-items: center;
+        .credit {
+          margin: 10px;
+          text-decoration-line: none;
+          color: black;
+        }
+      }
+    }
+  }
+
+  .content {
+    background-color: #f8f8f8;
+    height: 600px;
+    width: 700px;
+    margin-top: 50px;
+    margin-left: 80px;
+    position: relative;
+
+    .natu {
+      height: 250px;
+      object-fit: cover;
+      padding-bottom: 0px;
+    }
+
+    .photo {
+      position: absolute;
+      top: 70px;
+      left: 320px;
+      
+      .dog {
+        height: 70px;
+        width: 70px;
+        border-radius: 30px;
+      }
+    }
+
+    .acount-name {
+      position: absolute;
+      top: 130px;
+      left: 310px;
+
+      li {
+        font-size: 16px;
         font-weight: bold;
       }
     }
 
-    .registrations-middle-bottom {
-      height: 750px;
-      width: 50vw;
-      background-color: #f8f8f8;
+    .information-todo {
+      height: 70px;
       display: flex;
-      align-items: center;
-      flex-direction: column;
-      margin-bottom: 10px;
-      border: 1px solid white;
+      .information {
+        width: 350px;
+        background-color:white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid #f8f8f8;
 
-      .field {
-        padding-top: 20px;
-        
-        em {
-          font-size: 13px;
+        p {
           font-weight: bold;
+          margin: 20px;
         }
+      }
 
-        span {
-          margin-left: 10px;
-          padding: 2px 4px;
-          font-size: 12px;
-          background-color: red;
-          height: 14px;
-          width: 20px;
-          color: white;
-          border-radius: 3px;
+      .todo {
+        width: 350px;
+        background-color:gainsboro;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid white;
+
+        p {
+          font-weight: bold;
+          margin: 20px;
+        }
+      }
+    }
+
+    .information-lists {
+      display: flex;
+      flex-direction: column;
+      background-color: white;
+
+      .list {
+        border: 1px solid #f8f8f8;
+        height: 60px;
+        margin-top: 0;
+        display: flex;
+
+        .icon-copy {
+          height: 30px;
+          width: 30px;
+          margin: 15px;
+        }
+  
+        li {
+          margin-top: 20px;
         }
       }
       
-      ul {
-        font-weight: bold;
-      }
+      .information-table {
+        border: 1px solid #f8f8f8;
+        height: 60px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
 
-      li {
-        list-style: none;
-        font-size: 14px;
-        height: 0;
-      }
+        .table {
+          border: 1px solid white;
+          background-color: gainsboro;
+          height: 40px;
+          width: 650px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          text-decoration-line: none;
 
-      .field-font {
-        font-size: 13px;
-        font-weight: bold;
-      }
-
-      .personal-information {
-
-        .family-name-kanji {
-          padding-top: 20px;
-
-          span {
-            margin-left: 10px;
-            padding: 2px 4px;
-            font-size: 12px;
-            background-color: red;
-            height: 14px;
-            width: 20px;
-            color: white;
-            border-radius: 3px;
+          li {
+            font-size: 14px;
+            margin-bottom: 12px;
+            color: black;
           }
         }
-
-        .family-name-kana {
-          padding-top: 20px;
-
-          span {
-            margin-left: 10px;
-            padding: 2px 4px;
-            font-size: 12px;
-            background-color: red;
-            height: 14px;
-            width: 20px;
-            color: white;
-            border-radius: 3px;
-          }
-        }
-
-        .birthday {
-          padding-top: 20px;
-
-        }
-
-        span {
-          margin-left: 10px;
-          padding: 2px 4px;
-          font-size: 12px;
-          background-color: red;
-          height: 14px;
-          width: 20px;
-          color: white;
-          border-radius: 3px;
-        }
-      }
-
-      .registration-btn {
-        padding: 5px 100px;
-        margin-top: 30px;
-        background-color: lightcoral;
-        border-radius: 5px;
       }
     }
   }
-  .icon2 {
-    display: block;
-    padding-bottom: 40px;
+
+  .items {
+    background-color: #f8f8f8;
+    height: 400px;
+    width: 700px;
+    margin-top: 70px;
+    margin-left: 80px;
+    
+    .items-title {
+      border: 1px solid #f8f8f8;
+      height: 70px;
+
+      p {
+        font-weight: bold;
+        margin: 25px;
+      }
+    }
+
+    
+    .transaction {
+      height: 80ox;
+      display: flex;
+      
+      .transactioning {
+        height: 70px;
+        width: 350px;
+        background-color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid #f8f8f8;
+
+        p {
+          font-weight: bold;
+          margin: 20px;
+        }
+      }
+
+      .transactioned {
+        height: 70px;
+        width: 350px;
+        background-color: gainsboro;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid white;
+
+        p {
+          font-weight: bold;
+          margin: 20px;
+        }
+      }
+    }
+
+    .transaction-item {
+      border: 1px solid #f8f8f8;
+      background-color: white;
+      height: 253px;
+
+      .transactioning-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: column;
+        margin-top: 50px;
+
+        .icon-white-copy {
+          height: 100px;
+          width: 100px;
+        }
+
+        li {
+          font-size: 14px;
+          color: lightgray;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+
+  .out-box {
+    height: 200px;
+    width: 600px;
+    background-color:#f8f8f8;
+    margin-top:50px;
+    margin-left: 80px;
+    border: 1px solid white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .out {
+      height: 70px;
+      width: 400px;
+      background-color:lightcoral;
+      border-radius: 5px;
+      border: 1px solid white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .out-button {
+        text-align: center;
+        text-decoration-line: none;
+        color: white;
+      }
+    }
   }
 }
+
+
