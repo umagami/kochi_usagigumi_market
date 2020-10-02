@@ -11,12 +11,12 @@ Rails.application.routes.draw do
       get 'out'
     end
   end
-  resources :cards, only: [:index, :new] do
+  resources :cards, only: [:index, :new, :create, :destroy] do
     member do
       get 'payment_method'
-      post 'show', to: 'cards#show'
-      post 'pay', to: 'cards#pay'
-      post 'delete', to: 'cards#delete'
+      # post 'show', to: 'cards#show'
+      # post 'pay', to: 'cards#pay'
+      # post 'delete', to: 'cards#delete'
     end
   end
 end
