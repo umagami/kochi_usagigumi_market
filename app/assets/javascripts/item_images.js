@@ -1,54 +1,44 @@
-$(document).on('turbolinks:load', function(){
-  $('#image-input').on('change', function(e){
+$(document).on('turbolinks:load', ()=> {
+  const buildFileField = (index)=> {
+    const html = `<div data-index="${index}" class="js-file_group">
+                    <input class="js-file" type="file"
+                    name="item[item_images_attributes][${index}][image_url]"
+                    id="item_images_attributes_${index}_image_url"><br>
+                    <div class="js-remove">削除</div>
+                  </div>`;
+    return html;
+  }
+  const buildImg = (index, url)=> {
+    const html = `<img data-index="${index}" image_url="${url}" width="100px" height="100px">`;
+    return html;
+  }
 
-    let files = e.target.files;
-    $.each(files, function(index, file) {
-      let reader = new FileReader();
-      if(file.type.indexOf("image") < 0){
-        alert("画像ファイルを指定してください。");
-        return false;
-      }
-      reader.onload = (function(file){
-        return function(e){
-          let imageLength = $('#output-box').children('li').length;
-          let labelLength = $("#image-input>label").eq(-1).data('label-id');
+  // file_fieldのnameに動的なindexをつける為の配列
+  let fileIndex = [1,2,3,4,5,6,7,8,9,10];
+  lastIndex = $('.js-file_group:last').data('index');
+  fileIndex.splice(0, lastIndex);
 
-          $('#image-input').before(`<li class="preview-image" id="upload-image${labelLength}" data-image-id="${labelLength}">
-                                      <figure class="preview-image__figure">
-                                        <img src='${e.target.result}' title='${file.name}' >
-                                      </figure>
-                                      <div class="preview-image__button">
-                                        <a class="preview-image__button__edit">編集</a>
-                                        <a class="preview-image__button__delete" data-image-id="${labelLength}">削除</a>
-                                      </div>
-                                    </li>`);
-          $("#image-input>label").eq(-1).css('display','none');
+  $('.hidden-destroy').hide();
 
-          if (imageLength < 9) {
-            $("#image-input").append(`<label for="item_images${labelLength+1}" class="sell-container__content__upload__items__box__label" data-label-id="${labelLength+1}">
-                                        <input multiple="multiple" class="sell-container__content__upload__items__box__input" id="item_images${labelLength+1}" style="display: none;" type="file" name="item[images][]">
-                                        <i class="fas fa-camera fa-lg"></i>
-                                      </label>`);
-          };
-        };
-      })(file);
-      reader.readAsDataURL(file);
-    });
+  $('#image-box').on('change', '.js-file', function(e) {
+    const targetIndex = $(this).parent().data('index');
+    const file = e.target.files[0];
+    const blobUrl = window.URL.createObjectURL(file);
+    if (img = $(`img[data-index="${targetIndex}"]`)[0]) {
+      img.setAttribute('image_url', blobUrl);
+    } else {  
+      $('#previews').append(buildImg(targetIndex, blobUrl));
+      $('#image-box').append(buildFileField(fileIndex[0]));
+      fileIndex.shift();
+      fileIndex.push(fileIndex[fileIndex.length - 1] + 1)
+    }
   });
-
-  //削除ボタンが押された時
-  $(document).on('click', '.preview-image__button__delete', function(){
-    let targetImageId = $(this).data('image-id');
-    $(`#upload-image${targetImageId}`).remove();
-    $(`[for=item_images${targetImageId}]`).remove();
-
-    let imageLength = $('#output-box').children('li').length;
-    if (imageLength ==9) {
-      let labelLength = $("#image-input>label").eq(-1).data('label-id');
-      $("#image-input").append(`<label for="item_images${labelLength+1}" class="sell-container__content__upload__items__box__label" data-label-id="${labelLength+1}">
-                                  <input multiple="multiple" class="sell-container__content__upload__items__box__input" id="item_images${labelLength+1}" style="display: none;" type="file" name="item[images][]">
-                                  <i class="fas fa-camera fa-lg"></i>
-                                </label>`);
-    };
+  $('#image-box').on('click', '.js-remove', function() {
+    const targetIndex = $(this).parent().data('index')
+    const hiddenCheck = $(`input[data-index="${targetIndex}"].hidden-destroy`);
+    if (hiddenCheck) hiddenCheck.prop('checked', true);
+    $(this).parent().remove();
+    $(`img[data-index="${targetIndex}"]`).remove();
+    if ($('.js-file').length == 0) $('#image-box').append(buildFileField(fileIndex[0]));
   });
-})
+});

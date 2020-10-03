@@ -74,3 +74,5 @@ gem 'ancestry'
 gem 'payjp'
 #ハッシュデータの作成・使用
 gem 'active_hash'
+gem 'carrierwave'
+gem 'mini_magick'

@@ -1,24 +1,23 @@
 .sell
   %section.sell-container
     = form_with model:@item, local: true do |f|
-      .sell-container__content
-        .sell-title
-          %h3.sell-title__text
-            出品画像
-            %span.sell-title__require
-              必須
-        .sell-container__content__max-sheet 最大10枚までアップロードできます
-        .sell-container__content__upload
-          .sell-container__content__upload__items
-            .sell-container__content__upload__items__box
-              %ul#output-box
-                %div#image-input{tabindex:"0"}
-                  = f.label :item_images, for: "item_images0", class: 'sell-container__content__upload__items__box__label', data: {label_id: 0 } do 
-                    = f.file_field :item_url, multiple: true, class: "sell-container__content__upload__items__box__input", id: "item_images0", style: 'display: none;'
-                    %pre
-                      %i.fas.fa-camera.fa-lg
-                      ドラッグアンドドロップ
-                      またはクリックしてファイルをアップロード
+      #image-box
+        #previews
+          - if @item.persisted?
+            - @item.item_images.each_with_index do |image, i|
+              = image_tag image.image_url.url, data: { index: i }, width: "100", height: '100'
+        = f.fields_for :item_images do |image|
+          .js-file_group{"data-index" => "#{image.index}"}
+            = image.file_field :image_url, multiple: true, class: 'js-file'
+            %br/
+            %span.js-remove 削除
+          - if @item.persisted?
+            = image.check_box :_destroy, data:{ index: image.index }, class: 'hidden-destroy'
+        - if @item.persisted?
+          .js-file_group{"data-index" => "#{@item.item_images.count}"}
+            = file_field_tag :image_url, name: "item[item_images_attributes][#{@item.item_images.count}][image_url]", class: 'js-file'
+            .js-remove 削除
+
       .sell-container__content
         .sell-title
           %h3.sell-title__text
