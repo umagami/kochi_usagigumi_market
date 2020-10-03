@@ -27,9 +27,6 @@ Rails.application.routes.draw do
   resources :cards, only: [:index, :new, :create, :destroy] do
     member do
       get 'payment_method'
-      # post 'show', to: 'cards#show'
-      # post 'pay', to: 'cards#pay'
-      # post 'delete', to: 'cards#delete'
     end
   end
 end

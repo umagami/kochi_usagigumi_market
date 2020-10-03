@@ -62,7 +62,18 @@
       .li 支払い方法
     .method-choose
       .convenience
-        = link_to "クレジットカードを追加", new_card_path, class: "credit"
+        - if @card
+          = "************" + @card[:last4]
+          %br
+          = @card[:exp_month]
+          \/
+          = @card[:exp_year]
+          %br
+          = @card[:brand]
+          %br
+          = link_to "削除する", card_path(current_user.card), method: :delete
+        - else
+          = link_to "クレジットカードを追加", new_card_path, class: "credit"
       .means-top
         .means
           %span 選択した支払い方法を使う
