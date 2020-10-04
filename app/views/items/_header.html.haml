@@ -15,7 +15,7 @@
       %p.buranndo ブランド
     .nav2
       %p.roguinn ログイン
-        - if current_user == nil
-        - else
-          = link_to "マイページ", user_path, method: :show
+      - if current_user == nil
+      - else
+        = link_to "マイページ", user_path(current_user)
       %p.toroku 新規会員登録
