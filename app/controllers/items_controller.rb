@@ -16,6 +16,10 @@ class ItemsController < ApplicationController
     end
   end
 
+  def update 
+    
+  end 
+
   def show
   end
 
