@@ -24,9 +24,5 @@ Rails.application.routes.draw do
       get 'out'
     end
   end
-  resources :cards, only: [:index, :new, :create, :destroy] do
-    member do
-      get 'payment_method'
-    end
-  end
+  resources :cards, only: [:index, :new, :create, :destroy]
 end
