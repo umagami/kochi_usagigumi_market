@@ -17,18 +17,21 @@ class Item < ApplicationRecord
     items_array = []
 
     item.each do |item|
-      if item.category.ancestry == nil
-        if  item.category.id == id
-            items_array << item
-        end
-      elsif item.category.ancestry.count("/") == 1
-        if item.category.parent.parent_id == id
-            items_array << item
-        end
+      # binding.pry
+      if item.buyer_id == nil
+        if item.category.ancestry == nil
+          if  item.category.id == id
+              items_array << item
+          end
+        elsif item.category.ancestry.count("/") == 1
+          if item.category.parent.parent_id == id
+              items_array << item
+          end
 
-      else 
-        item.category.parent_id == id
-        items_array << item
+        else 
+          item.category.parent_id == id
+          items_array << item
+        end
       end
     end
     return items_array

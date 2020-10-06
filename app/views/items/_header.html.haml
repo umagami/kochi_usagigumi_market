@@ -17,7 +17,7 @@
 
       - if user_signed_in?
         %p.roguinn
-          = link_to user_session_path do
+          = link_to user_path(current_user) do
             マイページ
       - else
         %p.roguinn 
