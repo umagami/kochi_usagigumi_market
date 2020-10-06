@@ -13,11 +13,10 @@ class Item < ApplicationRecord
     
   def self.ladies_items_search(id)
 
-    item = Item.all
+    items = Item.all
     items_array = []
 
-    item.each do |item|
-      # binding.pry
+    items.each do |item|
       if item.buyer_id == nil
         if item.category.ancestry == nil
           if  item.category.id == id
