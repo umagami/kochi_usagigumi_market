@@ -10,5 +10,28 @@ class Item < ApplicationRecord
     belongs_to_active_hash :postage_payer
     belongs_to_active_hash :preparation_day
 
+    
+  def self.ladies_items_search(id)
+
+    item = Item.all
+    items_array = []
+
+    item.each do |item|
+      if item.category.ancestry == nil
+        if  item.category.id == id
+            items_array << item
+        end
+      elsif item.category.ancestry.count("/") == 1
+        if item.category.parent.parent_id == id
+            items_array << item
+        end
+
+      else 
+        item.category.parent_id == id
+        items_array << item
+      end
+    end
+    return items_array
+  end
 end
 

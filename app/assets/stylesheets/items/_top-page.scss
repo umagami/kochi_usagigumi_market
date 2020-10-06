@@ -328,6 +328,10 @@
             background-color: white;
             color: #333;
             padding: 16px;
+              .shipping {
+                font-size: 13px;
+                color: gray;
+              }
           }
         }
 
@@ -343,6 +347,7 @@
         height: 60vh;
         width: 100%;
         background-color: #f8f8f8;
+        // background-color: greenyellow;
         padding-top: 20px;
         // text-align: center;
           .head{
@@ -390,6 +395,10 @@
             background-color: white;
             color: #333;
             padding: 16px
+              // .shipping {
+              //   font-size: 13px;
+              //   color: gray;
+              // }
           }
         }
 
@@ -399,7 +408,7 @@
         }
 
       }
-      }
+    }
   }
 
 
