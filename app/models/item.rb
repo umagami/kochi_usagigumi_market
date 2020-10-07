@@ -12,7 +12,7 @@ class Item < ApplicationRecord
     belongs_to_active_hash :preparation_day
 
     accepts_nested_attributes_for :item_images
-    
+
     validates :name, :price, :introduction, :prefecture_id,
     :category_id, :item_condition_id, :postage_payer_id,
     :preparation_day_id, :user_id, presence: true
@@ -20,6 +20,7 @@ class Item < ApplicationRecord
     validates :price, presence: true,numericality: {
       greater_than_or_equal_to: 300, less_than_or_equal_to: 9999999,
       message: "¥300〜¥9999999の間で入力してください"
+
     }
 
     validate  :image_lists_validation
