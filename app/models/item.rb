@@ -12,6 +12,7 @@ class Item < ApplicationRecord
     belongs_to_active_hash :preparation_day
 
     accepts_nested_attributes_for :item_images
+    
     validates :name, :price, :introduction, :prefecture_id,
     :category_id, :item_condition_id, :postage_payer_id,
     :preparation_day_id, :user_id, presence: true
@@ -35,7 +36,6 @@ class Item < ApplicationRecord
   def self.ladies_items_search(id)
     items = Item.all
     items_array = []
-
     items.each do |item|
       if item.buyer_id == nil
         if item.category.ancestry == nil
@@ -54,4 +54,5 @@ class Item < ApplicationRecord
     end
     return items_array
   end
+
 end

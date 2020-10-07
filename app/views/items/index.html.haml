@@ -96,7 +96,7 @@
         - @new_items.each do |item|
           .productContent
             %figure.productContent__image
-              = image_tag item.item_images[0].image_url,class:"img"
+              = image_tag item.item_images[0].image_url.url, class:"img"
             .productContent__info
               %h3.name
                 = item.name
@@ -118,7 +118,7 @@
           .productContent
             %figure.productContent__image
               .productContent__image__main
-                = image_tag item.item_images[0].image_url,class:"img"
+                = image_tag item.item_images[0].image_url.url, class:"img"
             .productContent__info
               %h3.name
                 = item.name
