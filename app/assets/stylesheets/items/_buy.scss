@@ -11,7 +11,7 @@ body {
     &__logo {
       width: 185px;
       height: 54px;
-      background-image: url('material/logo/logo.png');
+      background-image: image-url('material/logo/logo.png');
       background-size: cover;
       background-repeat: no-repeat;
       background-position: top center;
@@ -28,7 +28,7 @@ body {
   &__logo {
     width: 185px;
     height: 54px;
-    background-image: url('material/logo/logo-white.png');
+    background-image: image-url('material/logo/logo-white.png');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: top center;
