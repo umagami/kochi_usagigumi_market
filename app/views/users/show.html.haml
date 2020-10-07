@@ -1,3 +1,4 @@
+= render 'items/header'
 %nav
   %ul
     %li
@@ -94,3 +95,8 @@
         .transactioning-item
           = image_tag 'material/pict/pict-reason-01.jpg', size: "200x80", alt: "test" ,class: "icon-white-copy"
           %li 取引中の商品はありません
+= render 'items/banner'
+= render 'items/footer'
+.purchaseBtn
+  %span.purchaseBtn__text 出品する
+  = image_tag 'material/icon/icon_camera.png',alt:"icon", class:"icon"

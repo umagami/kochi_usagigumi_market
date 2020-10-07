@@ -1,3 +1,4 @@
+= render 'items/header'
 %nav
   %ul
     %li
@@ -59,3 +60,8 @@
   .out-box
     .out
       = link_to "ログアウト", destroy_user_session_path, method:"delete", class: "out-button"
+= render 'items/banner'
+= render 'items/footer'
+.purchaseBtn
+  %span.purchaseBtn__text 出品する
+  = image_tag 'material/icon/icon_camera.png',alt:"icon", class:"icon"
