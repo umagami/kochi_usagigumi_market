@@ -1,3 +1,4 @@
+= render 'items/header'
 %nav
   %ul
     %li
@@ -65,3 +66,8 @@
       .means-top
         .means
           %span 選択した支払い方法を使う
+= render 'items/banner'
+= render 'items/footer'
+.purchaseBtn
+  %span.purchaseBtn__text 出品する
+  = image_tag 'material/icon/icon_camera.png',alt:"icon", class:"icon"
