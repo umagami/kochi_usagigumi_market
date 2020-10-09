@@ -21,15 +21,23 @@ class ItemsController < ApplicationController
     end
   end
 
-  def update
-
-  end
-
   def show
     @item = Item.find(params[:id])
     @category = Category.where(ancestry:nil)
     @categoryParent = Category.find(Item.parentCategory(@item.category))
     @items = Item.categorySRC(@item.category,@item.id).last(3)
+
+  def edit
+    @item = Item.find(params[:id])
+  end
+
+  def update
+    @item = Item.find(params[:id])
+    if @item.update(item_params)
+      redirect_to root_path
+    else 
+      render :edit and return
+    end
   end
 
   def buy
