@@ -56,4 +56,45 @@ class Item < ApplicationRecord
     return items_array
   end
 
+    def self.parentCategory(item)
+      if item.ancestry == nil then
+        ancestryNumber = item.id
+      else
+        if item.ancestry.count("/") == 0 then
+          ancestryNumber = item.parent_id
+        else
+          ancestryNumber = item.parent.parent_id
+        end
+      end
+      return ancestryNumber
+    end
+
+
+    def self.categorySRC(item,currentItemId)
+      ancestryNumber = self.parentCategory(item)
+
+      items = Item.all
+      itemArray = []
+
+      items.each do |itemInfo|
+        if itemInfo.category.ancestry == nil then
+          if itemInfo.category.id == ancestryNumber then
+            itemArray << itemInfo
+          end
+        elsif itemInfo.category.ancestry.count("/") == 0 then
+          if itemInfo.category.parent_id == ancestryNumber then
+            itemArray << itemInfo
+          end
+        else
+          if itemInfo.category.parent.parent_id == ancestryNumber then
+            itemArray << itemInfo
+          end
+        end
+      end
+      itemArray.delete_if{|item|
+        item.id == currentItemId
+      }
+      return itemArray
+    end
+
 end

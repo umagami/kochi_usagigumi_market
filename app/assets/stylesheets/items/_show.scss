@@ -12,8 +12,8 @@
   margin: 0px auto;
 }
 
-.topContent{
-}
+// .topContent{
+// }
 
 .itemInfo {
   background-color: #fff;
@@ -26,6 +26,24 @@
   }
   &__itemImage {
     margin: 16px 0 0;
+    ul {
+      justify-content: center;
+      display: flex;
+      position: relative
+      li {
+        object-fit: fill;
+        display: flex;
+        flex-direction: column;
+        width: 560px;
+        align-items: center;
+        margin: 0 auto;
+      }
+      ul {
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+      }
+    }
   }
   &__itemPrice {
     margin: 24px 0 24px;
@@ -89,6 +107,42 @@ td {
   background-color: #f8f8f8;
   margin: 10px 0;
   text-align: left;
+}
+
+.option {
+  display: flex;
+  margin: 25px auto;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+  &__edit {
+    margin-right: 20px;
+    box-sizing: border-box;
+    line-height: 48px;
+    background: #7b7b7b;
+    border: 1px solid #3CCACE;
+    color: #fff;
+    width: 30%;
+    font-size: 18px;
+    border-radius: 100px;
+    p {
+      color:#fff;
+    }
+  }
+  &__delete {
+    box-sizing: border-box;
+    line-height: 48px;
+    background: #f66f6f;
+    border: 1px solid #3CCACE;
+    color: #fff;
+    width: 30%;
+    font-size: 18px;
+    border-radius: 100px;
+    p {
+      color:#fff;
+    }
+  }
+  
 }
 
 .commentBtn {

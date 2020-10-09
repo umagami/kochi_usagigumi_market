@@ -5,33 +5,42 @@
     .confirmItem__info
       .confirmItem__info__content
         .confirmItem__info__content__image
-          = image_tag "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/7/a001.png", size: "80x80", class: "infoImage"
+          = image_tag @item.item_images[0].image_url, class: "img", size: "80x80", class: "infoImage"
         .confirmItem__info__content__a
           .confirmItem__info__content__a__b
-            味噌汁の具
+            = @item.name
           .confirmItem__info__content__a__c
             .d
-              送料込み（出品者負担）
+              = @item.postage_payer.name
             .e
-              6000円
+              = @item.price
     .confirmItem__price
       .confirmItem__price__info
         .name
           支払い金額
         .data
-          6000円
+          ¥
+          = @item.price
     .confirmItem__payment
       .confirmItem__payment__info
         .name
           支払い方法
-        .data
-          = link_to "登録してください", "#"
+        - if @user.cards == []
+          .data
+            = link_to "登録してください", "#"
+        - else
+          .data
+            ok
     .confirmItem__destination
       .confirmItem__destination__info
         .name
           配送先
-        .data
-          = link_to "登録してください", "#"
+        - if @user.destinations == []
+          .data
+            = link_to "登録してください", "#"
+        - else
+          .data
+            ok
     .confirmItem__purchase
       .confirmItem__purchase__info
         .text
