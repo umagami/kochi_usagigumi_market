@@ -34,7 +34,6 @@ class ItemsController < ApplicationController
 
   def buy
     @item = Item.find(params[:id])
-    @user = User.find(current_user.id)
   end
 
   private
