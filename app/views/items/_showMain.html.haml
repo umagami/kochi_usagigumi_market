@@ -8,12 +8,11 @@
           .itemInfo__itemImage
             %ul
               %li
-                - @image.each do |image|
-                  = image_tag image, height: '346px', width: '560px'
+                = image_tag @item.item_images[0].image_url.url, height: '346px', width: '560px'
                 %ul
-                  - @image.each do |image|
+                  - @item.item_images.each do |image|
                     %li
-                      = image_tag image, height: '87px', width: '140px'
+                      = image_tag image.image_url.url, height: '87px', width: '140px'
           .itemInfo__itemPrice
             %span 
               ¥
@@ -121,7 +120,7 @@
             .productContent
               %figure.productContent__image
                 .productContent__image__main
-                  = image_tag item.item_images[0].image_url, class: "img"
+                  = image_tag item.item_images[0].image_url.url, class: "img"
               .productContent__info
                 %h3.name 
                   = item.name
