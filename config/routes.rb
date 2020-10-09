@@ -2,6 +2,10 @@ Rails.application.routes.draw do
   devise_for :users
   root 'items#index'
 
+  namespace :api do
+    resources :categories, only: :index, defaults: { format: 'json' }
+  end
+
   resources :items, only: [:index, :show, :new, :create] do
     member do
      get 'buy'
