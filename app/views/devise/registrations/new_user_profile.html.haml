@@ -1,0 +1,39 @@
+.registrations-top
+  = image_tag 'material/logo/logo.png', size: "200x80", alt: "test" ,class: "icon1"
+  = form_with model: @user_profile, local:true do |f|
+    = render "devise/shared/error_messages", resource: @user_profile
+    .new_user
+      .registrations-middle-top
+        %p 本人確認
+      .registrations-middle-bottom
+        %li 安心・安全にご利用いただくために、お客さまの本人
+        -# %br/
+        %li 情報の登録にご協力ください。他のお客さまに公開さ
+        -# %br/
+        %li れることはありません。
+        %br/
+        .personal-information 
+          .family-name-kanji
+            .zenkaku
+              = f.label :"お名前(全角)", class: "field-font"
+              %span 必須
+            .kaniji
+              = f.text_field :"family_name", placeholder:"例) 山田", type:"text", style:"width:100px;", value:""
+              = f.text_field :"first_name", placeholder:"例) 太郎", type:"text", style:"width:100px;", value:""
+          .family-name-kana
+            .zenkaku
+              = f.label :"お名前カナ(全角)", class: "field-font"
+              %span 必須
+            .kana
+              = f.text_field :"kana_family_name", placeholder:"例) ヤマダ", type:"text", style:"width:100px;", value:"", pattern:"(?=.*?[\u30A1-\u30FC])[\u30A1-\u30FC\s]*"
+              = f.text_field :"kana_first_name", placeholder:"例) タロウ", type:"text", style:"width:100px;", value:"", pattern:"(?=.*?[\u30A1-\u30FC])[\u30A1-\u30FC\s]*"
+          .birthday
+            = f.label :"生年月日", class: "field-font"
+            %span 必須
+            %br/
+          .date
+            = f.text_field :"birthday",type:"date", style:"width:210px;", value:""
+        .actions
+          = f.submit "次へ", class:"registration-btn"
+        = render "devise/shared/links"
+  = image_tag src='material/logo/logo-white.png', size: "200x80", alt: "test",class:"icon2"
