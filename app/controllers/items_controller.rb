@@ -1,14 +1,13 @@
 class ItemsController < ApplicationController
 
-
+  
+  before_action :item_find, {only:[:show, :edit, :update, :buy, :access_judge]}
   before_action :sign_in_judge, {only:[:edit,:new]}
   before_action :access_judge, {only:[:edit]}
 
   def index
-
     @new_items = Item.last(5)
     @ladies_items = Item.ladies_items_search(1).last(5)
-
   end
 
   def new
@@ -27,18 +26,14 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @item = Item.find(params[:id])
     @category = Category.where(ancestry:nil)
     @categoryParent = Category.find(Item.parentCategory(@item.category))
     @items = Item.categorySRC(@item.category,@item.id).last(3)
 
   def edit
-    @item = Item.find(params[:id])
-
   end
 
   def update
-    @item = Item.find(params[:id])
     if @item.update(item_params)
       redirect_to root_path
     else 
@@ -47,11 +42,13 @@ class ItemsController < ApplicationController
   end
 
   def buy
+  end
+
+  def item_find
     @item = Item.find(params[:id])
   end
 
   def access_judge
-    @item = Item.find(params[:id])
     if @item.user_id != current_user.id
       redirect_to root_path
     end

@@ -9,9 +9,6 @@
   width: 100%;
 
   .Header {
-      // background-color: aquamarine;
-      // margin: 0 auto;
-      // height: 15vh;
       padding-top: 30px;
       padding: 15px  300px;
       position: relative;
@@ -34,7 +31,6 @@
               height: 35px;
             }
             .searchButton{
-              // width: 36px;
               border: 0;
               cursor: pointer;
               background-color: #3CCACE;
@@ -311,7 +307,6 @@
               margin: 24px 0 8px;
               text-decoration: none;
               width: auto;
-              // width: calc(100% / 5);
                 &__image {
                   height: 150px;
                   overflow: hidden;
@@ -375,7 +370,6 @@
               margin: 24px 0 8px;
               text-decoration: none;
               width: auto;
-              // width: calc(100% / 5);
                 &__image {
                   height: 150px;
                   overflow: hidden;
@@ -511,4 +505,3 @@
     }
 }
 
-// width: calc(100% / 5);
