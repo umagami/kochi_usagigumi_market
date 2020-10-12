@@ -34,6 +34,7 @@ $(window).on('load', ()=> {
     }
   });
   $('#image-box').on('click', '.js-remove', function() {
+    console.log("ok")
     const targetIndex = $(this).parent().data('index')
     const hiddenCheck = $(`input[data-index="${targetIndex}"].hidden-destroy`);
     if (hiddenCheck) hiddenCheck.prop('checked', true);

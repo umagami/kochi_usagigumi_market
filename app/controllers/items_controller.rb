@@ -1,4 +1,9 @@
 class ItemsController < ApplicationController
+
+
+  before_action :sign_in_judge, {only:[:edit,:new]}
+  before_action :access_judge, {only:[:edit]}
+
   def index
 
     @new_items = Item.last(5)
@@ -29,6 +34,7 @@ class ItemsController < ApplicationController
 
   def edit
     @item = Item.find(params[:id])
+
   end
 
   def update
@@ -36,20 +42,33 @@ class ItemsController < ApplicationController
     if @item.update(item_params)
       redirect_to root_path
     else 
-      render :edit and return
-    end
+      redirect_to edit_item_path
+    end 
   end
 
   def buy
     @item = Item.find(params[:id])
   end
 
+  def access_judge
+    @item = Item.find(params[:id])
+    if @item.user_id != current_user.id
+      redirect_to root_path
+    end
+  end
+
+  def sign_in_judge
+    if current_user == nil
+      redirect_to user_session_path
+    end
+  end
+  
   private
 
   def item_params
     params.require(:item).permit(:name, :price, :introduction, :prefecture_id,
     :category_id, :item_condition_id, :postage_payer_id,
-    :preparation_day_id, item_images_attributes: [:image_url]).merge(user_id: current_user.id)
+    :preparation_day_id, item_images_attributes: [:image_url, :id, :_destroy]).merge(user_id: current_user.id)
   end
 
 end
