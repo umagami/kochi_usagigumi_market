@@ -40,25 +40,25 @@ describe UserProfile do
     it 'If family_name is not full size input, cannot register it' do
       user_profile = build(:user_profile, family_name: "ｱｲｳｴｵ")
       user_profile.valid?
-      expect(user_profile.errors[:family_name]).to include("It is a dirty value")
+      expect(user_profile.errors[:family_name]).to include("全角で入力してください")
     end
 
     it 'If first_name is not full size input, cannot register it' do
       user_profile = build(:user_profile, first_name: "ｱｲｳｴｵ") 
       user_profile.valid?
-      expect(user_profile.errors[:first_name]).to include("It is a dirty value")
+      expect(user_profile.errors[:first_name]).to include("全角で入力してください")
     end
 
     it 'If kana_family_name is not full size katakana, cannot register it' do
       user_profile = build(:user_profile, kana_family_name: "あいうえお")
       user_profile.valid?
-      expect(user_profile.errors[:kana_family_name]).to include("It is a dirty value")
+      expect(user_profile.errors[:kana_family_name]).to include("全角(カナ)で入力してください")
     end
 
     it 'If kana_first_name is not full size katakana, cannot register it' do
       user_profile = build(:user_profile, kana_first_name: "あいうえお")
       user_profile.valid?
-      expect(user_profile.errors[:kana_first_name]).to include("It is a dirty value")
+      expect(user_profile.errors[:kana_first_name]).to include("全角(カナ)で入力してください")
     end
   end
 end
