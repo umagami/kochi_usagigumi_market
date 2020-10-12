@@ -43,10 +43,6 @@ class ItemsController < ApplicationController
   def buy
   end
 
-  def item_find
-    @item = Item.find(params[:id])
-  end
-
   def access_judge
     if @item.user_id != current_user.id
       redirect_to root_path
@@ -60,6 +56,10 @@ class ItemsController < ApplicationController
   end
   
   private
+
+  def item_find
+    @item = Item.find(params[:id])
+  end
 
   def item_params
     params.require(:item).permit(:name, :price, :introduction, :prefecture_id,
