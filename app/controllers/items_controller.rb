@@ -1,6 +1,4 @@
 class ItemsController < ApplicationController
-
-  
   before_action :item_find, {only:[:show, :edit, :update, :buy, :access_judge]}
   before_action :sign_in_judge, {only:[:edit,:new]}
   before_action :access_judge, {only:[:edit]}
@@ -29,6 +27,7 @@ class ItemsController < ApplicationController
     @category = Category.where(ancestry:nil)
     @categoryParent = Category.find(Item.parentCategory(@item.category))
     @items = Item.categorySRC(@item.category,@item.id).last(3)
+  end
 
   def edit
   end
