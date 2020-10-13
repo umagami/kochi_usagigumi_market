@@ -1,4 +1,4 @@
-document.addEventListener('turbolinks:load', function () {
+window.addEventListener('load', function () {
   if (!$('#card_form')[0]) return false;
   
   Payjp.setPublicKey("pk_test_a26d6cb64b232098d22d8d25");

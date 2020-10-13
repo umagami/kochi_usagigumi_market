@@ -1,4 +1,4 @@
-document.addEventListener('turbolinks:load', function () {
+window.addEventListener('load', function () {
   if (!$('.select-category')[0]) return false; 
 
     function buildCategoryForm(categories) { 
