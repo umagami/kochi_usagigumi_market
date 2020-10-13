@@ -5,7 +5,7 @@
     .confirmItem__info
       .confirmItem__info__content
         .confirmItem__info__content__image
-          = image_tag @item.item_images[0].image_url, class: "img", size: "80x80", class: "infoImage"
+          = image_tag @item.item_images[0].image_url.url, class: "img", size: "80x80", class: "infoImage"
         .confirmItem__info__content__a
           .confirmItem__info__content__a__b
             = @item.name
