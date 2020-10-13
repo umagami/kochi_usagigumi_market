@@ -1,0 +1,63 @@
+.registrations-top
+  = image_tag 'material/logo/logo.png', size: "200x80", alt: "test" ,class: "icon1"
+  = form_for(@destination, url: destinations_path, method: :@post) do |f|
+    = render "devise/shared/error_messages", resource: @destination
+    .new_user
+      .registrations-middle-top
+        %p 商品送付先住所
+      .registrations-middle-bottom
+        %li 安心・安全にご利用いただくために、お客さまの本人
+        -# %br/
+        %li 情報の登録にご協力ください。他のお客さまに公開さ
+        -# %br/
+        %li れることはありません。
+        %br/
+        .personal-information 
+          .family-name-kanji
+            .zenkaku
+              = f.label :"送付先氏名(全角)", class: "field-font"
+              %span 必須
+            .kaniji
+              = f.text_field :"destination_family_name", placeholder:"例) 山田", type:"text", style:"width:100px;", value:""
+              = f.text_field :"destination_first_name", placeholder:"例) 太郎", type:"text", style:"width:100px;", value:""
+          .family-name-kana
+            .zenkaku
+              = f.label :"送付先氏名カナ(全角)", class: "field-font"
+              %span 必須
+            .kana
+              = f.text_field :"destination_kana_family_name", placeholder:"例) ヤマダ", type:"text", style:"width:100px;", value:"", pattern:"(?=.*?[\u30A1-\u30FC])[\u30A1-\u30FC\s]*"
+              = f.text_field :"destination_kana_first_name", placeholder:"例) タロウ", type:"text", style:"width:100px;", value:"", pattern:"(?=.*?[\u30A1-\u30FC])[\u30A1-\u30FC\s]*"
+          .form-group
+            = f.label :"郵便番号", class: "field-font"
+            %span 必須
+            %br/
+            = f.text_field :post_code, autofocus: true, placeholder: "例）123-4567", style:"width:210px;"
+          .form-group
+            = f.label :"都道府県", class: "field-font"
+            %span 必須
+            %br/
+            = f.collection_select :prefecture_id, Prefecture.all, :id, :name, {autofocus: true, prompt: '選択して下さい'}, class: "collection"
+          .form-group
+            = f.label :"市町村", class: "field-font"
+            %span 必須
+            %br/
+            = f.text_field :municipality, autofocus: true, placeholder: "例）札幌市", style:"width:210px;"
+          .form-group
+            = f.label :"番地", class: "field-font"
+            %span 必須
+            %br/
+            = f.text_field :house_number, autofocus: true, placeholder: "例）青葉1-1-1", style:"width:210px;"
+          .form-group
+            = f.label :"建物名", class: "field-font"
+            %span.nini 任意
+            %br/
+            = f.text_field :building_name, autofocus: true, placeholder: "例）柳ビル103", style:"width:210px;"
+          .form-group
+            = f.label :"電話番号", class: "field-font"
+            %span.nini 任意
+            %br/
+            = f.text_field :phone_number, autofocus: true, placeholder: "例）12345678910", style:"width:210px;"
+        .actions
+          = f.submit "登録する", class:"registration-btn"
+        = render "devise/shared/links"
+  = image_tag src='material/logo/logo-white.png', size: "200x80", alt: "test",class:"icon2"
