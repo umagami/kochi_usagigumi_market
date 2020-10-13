@@ -29,6 +29,8 @@ class ItemsController < ApplicationController
     @category = Category.where(ancestry:nil)
     @categoryParent = Category.find(Item.parentCategory(@item.category))
     @items = Item.categorySRC(@item.category,@item.id).last(3)
+    @comment = Comment.new
+    @comment = @item.comments
   end
 
   def edit
