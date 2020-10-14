@@ -14,7 +14,7 @@
                     %li
                       = image_tag image.image_url.url, height: '87px', width: '140px'
           .itemInfo__itemPrice
-            %span 
+            %span
               ¥
               = @item.price
             .itemInfo__itemPrice__priceOption
@@ -25,7 +25,7 @@
             %table
               %tr
                 %th 出品者
-                %td 
+                %td
                   = @item.user.name
               %tr
                 %th カテゴリー
@@ -64,11 +64,11 @@
                 %td
               %tr
                 %th 商品の状態
-                %td 
+                %td
                   = @item.item_condition.name
               %tr
                 %th 配送料の負担
-                %td 
+                %td
                   = @item.postage_payer.name
               %tr
                 %th 発送元の地域
@@ -77,7 +77,7 @@
                     = @item.prefecture.name
               %tr
                 %th 発送日の目安
-                %td 
+                %td
                   = @item.preparation_day.name
 
           .option
@@ -101,17 +101,33 @@
                   .option__sold-out
                     売り切れました
         .commentInfo
-          %form#new_comment.new_comment{action: "", method: "post"}
-            %input{name: "utf8", type: "hidden", value: ""}/
-            %input{name: "", type: "hidden", value: ""}/
-            %textarea#comment_body{name: "comment[body]", required: "required"}
+          .comment_box
+            .messages_box
+              - @comments.each do |comment|
+                .messages_box__message
+                  .user-info
+                    .user-info__img
+                    -if comment.user_id == @item.user_id
+                      .seller
+                        出品者
+                  .message-info
+                    .message-info__name
+                      = comment.user.name
+                    .message-info__text
+                      .message-info__text__message
+                        = comment.message
+                      .message-info__text__time
+                        = comment.created_at
+            = form_with url: item_comments_path(@item.id), local: true do |f|
+              = f.text_area :message, id: "comment_body",wrap: "soft"
+              = f.hidden_field :item_id, value: @item.id
+              %button.commentBtn{name: "button", type: "submit"}
+                コメントする
             %p.noticeMsg
               相手のことを考え丁寧なコメントを心がけましょう。
               %br/
               不快な言葉遣いなどは利用制限や退会処分となることがあります。
             %br/
-            %button.commentBtn{name: "button", type: "submit"}
-              コメントする
         .link
           .links
             .link-left
@@ -129,11 +145,10 @@
                 .productContent__image__main
                   = image_tag item.item_images[0].image_url.url, class: "img"
               .productContent__info
-                %h3.name 
+                %h3.name
                   = item.name
                 %ul
-                  %li 
+                  %li
                     =item.price
                 %p
                   = item.postage_payer.name
-

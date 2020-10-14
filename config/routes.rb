@@ -21,11 +21,13 @@ Rails.application.routes.draw do
      post "purchase"
     end
   end
+
   resources :users, only: [:index, :show] do
     member do
       get 'out'
     end
   end
+
   resources :cards, only: [:index, :new, :create, :destroy] do
     resources :users, only: [:index, :show] do
       member do
