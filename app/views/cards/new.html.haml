@@ -58,7 +58,7 @@
         %li 電話番号の確認
       .side-box
         .log-out-box
-          = link_to "ログアウト", out_user_path, class: "log-out"
+          = link_to "ログアウト", out_user_path(current_user), class: "log-out"
   .main-cregit
     .method-cregit
       .li クレジットカード情報入力

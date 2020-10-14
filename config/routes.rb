@@ -25,5 +25,11 @@ Rails.application.routes.draw do
       get 'out'
     end
   end
-  resources :cards, only: [:index, :new, :create, :destroy]
+  resources :cards, only: [:index, :new, :create, :destroy] do
+    resources :users, only: [:index, :show] do
+      member do
+        get 'out'
+      end
+    end
+  end
 end

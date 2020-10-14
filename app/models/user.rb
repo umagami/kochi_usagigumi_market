@@ -7,7 +7,7 @@ class User < ApplicationRecord
   has_many :items,dependent: :destroy
   has_many :comments, dependent: :destroy
   has_many :destinations, dependent: :destroy
-  has_many :cards, dependent: :destroy
+  has_one :card, dependent: :destroy
   has_one :user_profile, dependent: :destroy
 
   validates :name, presence: true, uniqueness: true
