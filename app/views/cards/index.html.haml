@@ -2,7 +2,7 @@
 %nav
   %ul
     %li
-      = link_to "フリマ", "#"
+      = link_to "フリマ", root_path
     %li
       = link_to "マイページ", "/users/id", class:"aa"
     %li.crumb 支払い方法
@@ -56,7 +56,7 @@
         %li 電話番号の確認
       .side-box
         .log-out-box
-          = link_to "ログアウト", "#", class: "log-out"
+          = link_to "ログアウト", out_user_path(current_user), class: "log-out"
   .main
     .method
       .li 支払い方法

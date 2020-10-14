@@ -2,7 +2,7 @@
 %nav
   %ul
     %li
-      = link_to "フリマ", "#"
+      = link_to "フリマ", root_path
     %li
       = link_to "マイページ", "/users/id", class:"aa"
     %li
@@ -58,7 +58,7 @@
         %li 電話番号の確認
       .side-box
         .log-out-box
-          = link_to "ログアウト", "#", class: "log-out"
+          = link_to "ログアウト", out_user_path, class: "log-out"
   .main-cregit
     .method-cregit
       .li クレジットカード情報入力
@@ -87,7 +87,7 @@
           #card_token
         .cregit-button
           = f.submit "追加する", id: "regist_card", class: "button"
-          = submit_tag "追加する", id: "token_submit", class: "button"
+          -# = submit_tag "追加する", id: "token_submit", class: "button"
 = render 'items/banner'
 = render 'items/footer'
 .purchaseBtn

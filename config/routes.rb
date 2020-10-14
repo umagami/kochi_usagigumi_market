@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   resources :items, only: [:index, :show, :new, :create, :edit, :update] do
     member do
      get 'buy'
+     post "purchase"
     end
   end
   resources :users, only: [:index, :show] do

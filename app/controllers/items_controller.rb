@@ -41,6 +41,21 @@ class ItemsController < ApplicationController
   end
 
   def buy
+    @item = Item.find(params[:id])
+    @card = Card.get_card(current_user.card.customer_token) if current_user.card
+  end
+
+  def purchase
+    @item = Item.find(params[:id])
+    @buyer = @item.update(buyer_id: current_user.id)
+    Payjp.api_key = Rails.application.credentials.payjp[:secret_key]
+    customer_token = current_user.card.customer_token
+    Payjp::Charge.create(
+      amount: @item.price,
+      customer: customer_token,
+      currency: 'jpy'
+    )
+    redirect_to root_path(@item)
   end
 
   def access_judge
@@ -66,5 +81,4 @@ class ItemsController < ApplicationController
     :category_id, :item_condition_id, :postage_payer_id,
     :preparation_day_id, item_images_attributes: [:image_url, :id, :_destroy]).merge(user_id: current_user.id)
   end
-
 end

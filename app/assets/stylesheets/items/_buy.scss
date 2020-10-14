@@ -100,6 +100,7 @@ body {
       font-weight: 600;
       display: flex;
       justify-content: space-between;
+      position: relative;
     }
   }
   &__payment {
@@ -115,6 +116,13 @@ body {
       font-size: 14px;
       font-weight: 600;
       margin-bottom: 16px;
+    }
+    .user-info-update {
+      position: absolute;
+      right: 0px;
+      .update-btn {
+        font-size: 14px;
+      }
     }
     .data {
       font-size: 14px;
@@ -136,6 +144,13 @@ body {
       font-size: 14px;
       font-weight: 600;
       margin-bottom: 16px;
+    }
+    .user-info-update {
+      position: absolute;
+      right: 0px;
+      .update-btn {
+        font-size: 14px;
+      }
     }
     .data {
       font-size: 14px;
@@ -166,6 +181,7 @@ body {
         width: 60%;
         font-size: 18px;
         border-radius: 100px;
+        text-align: center;
       }
     }
   }
