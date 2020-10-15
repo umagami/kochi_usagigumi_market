@@ -95,20 +95,21 @@
         新規投稿商品
       .productLists
         - @new_items.each do |item|
-          = link_to item_path(item.id) do
-            .productContent
-              %figure.productContent__image
-                = image_tag item.item_images[0].image_url.url, class:"img"
-              .productContent__info
-                %h3.name
-                  = item.name
-                %ul
-                  %li 
-                    = item.price 
-                    円
-                %p.shipping 
-                  = item.postage_payer.name
-       
+          .productContent
+            %figure.productContent__image
+              = image_tag item.item_images[0].image_url.url, class:"img"
+                -if item.buyer_id.present? 
+                .sold
+                  .sold-inner SOLD
+            .productContent__info
+              %h3.name
+                = item.name
+              %ul
+                %li 
+                  = item.price 
+                  円
+              %p.shipping 
+                = item.postage_payer.name
 
     %section.akaiba
       %h2.head
@@ -117,20 +118,22 @@
         レディース
       .productLists
         - @ladies_items.each do |item|
-          = link_to item_path(item.id) do
-            .productContent
-              %figure.productContent__image
-                .productContent__image__main
-                  = image_tag item.item_images[0].image_url.url, class:"img"
-              .productContent__info
-                %h3.name
-                  = item.name
-                %ul
-                  %li 
-                    = item.price
-                    円
-                %p.shipping
-                  = item.postage_payer.name
+          .productContent
+            %figure.productContent__image
+              .productContent__image__main
+                = image_tag item.item_images[0].image_url.url, class:"img"
+                  -if item.buyer_id.present? 
+                  .sold
+                    .sold-inner SOLD
+            .productContent__info
+              %h3.name
+                = item.name
+              %ul
+                %li 
+                  = item.price
+                  円
+              %p.shipping
+                = item.postage_payer.name
         
 
   = render 'banner'
