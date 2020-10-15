@@ -2,8 +2,6 @@ class CommentsController < ApplicationController
 
   def create
     @comment = Comment.new(comment_params)
-    binding.pry
-    @seller_of_item = User.find(@comment.item.user_id)
     if @comment.save
       respond_to do |format|
         format.json
@@ -24,7 +22,7 @@ class CommentsController < ApplicationController
   private
 
   def comment_params
-    params.permit(:message,:item_id).merge(user_id: current_user.id)
+    params.require(:comment).permit(:message,:item_id).merge(user_id: current_user.id)
   end
 
 end
