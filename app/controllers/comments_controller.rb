@@ -2,6 +2,7 @@ class CommentsController < ApplicationController
 
   def create
     @comment = Comment.new(comment_params)
+    @item_seller = @comment.item.user_id
     if @comment.save
       respond_to do |format|
         format.json
