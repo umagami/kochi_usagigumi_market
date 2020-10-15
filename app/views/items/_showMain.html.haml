@@ -117,8 +117,8 @@
                       .message-info__text__message
                         = comment.message
                       .message-info__text__time
-                        = comment.created_at
-            = form_with url: item_comments_path(@item.id), local: true do |f|
+                        = comment.created_at.strftime("%Y-%m-%d %H:%M")
+            = form_with model: [@item, @comment], action: "/comments", class: "new_comment" do |f|
               = f.text_area :message, id: "comment_body",wrap: "soft"
               = f.hidden_field :item_id, value: @item.id
               %button.commentBtn{name: "button", type: "submit"}

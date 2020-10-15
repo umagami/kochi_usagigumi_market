@@ -8,8 +8,9 @@ require("@rails/ujs").start()
 require("@rails/activestorage").start()
 require("channels")
 require("card")
-require("item_images")
 require("category_select")
+require("comments")
+require("item_images")
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference
