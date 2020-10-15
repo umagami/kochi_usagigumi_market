@@ -31,6 +31,7 @@ class ItemsController < ApplicationController
     @items = Item.categorySRC(@item.category,@item.id).last(3)
     @comment = Comment.new
     @comments = @item.comments
+    @favorites = Favorite.fav_count(@item.id)
   end
 
   def edit

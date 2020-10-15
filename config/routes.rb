@@ -16,6 +16,7 @@ Rails.application.routes.draw do
 
   resources :items do
     resources :comments, only:[:create,:update,:destroy]
+    resource :favorites, only: [:create, :destroy]
     member do
      get 'buy'
      post "purchase"

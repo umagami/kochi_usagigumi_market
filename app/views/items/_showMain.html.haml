@@ -92,6 +92,13 @@
                     %p
                       削除
               - else
+               = form_with url: item_favorites_path(@item.id), local: true do |f|
+                = f.hidden_field :item_id, value: @item.id
+                %button.option__favorite{name: "button", type: "submit"}
+                  %p
+                    お気に入り
+              .option_buy
+                購入する
                 - if @item.buyer_id == nil
                   %button.option__perches{name: "button", type: "submit"}
                     = link_to buy_item_path(@item.id) do
