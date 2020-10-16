@@ -83,7 +83,7 @@
           .option
             - if @item.user_id == current_user.id
               %button.option__edit{name: "button", type: "submit"}
-                = link_to "#" do
+                = link_to edit_item_path(@item.id) do
                   %p
                     編集
               %button.option__delete{name: "button", type: "submit"}

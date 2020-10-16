@@ -2,7 +2,7 @@ class Item < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
     has_many :comments, dependent: :destroy
     has_many :item_images, dependent: :destroy
-    accepts_nested_attributes_for :item_images, allow_destroy: true
+    accepts_nested_attributes_for :item_images, allow_destroy: true, update_only: true
     belongs_to :user
     belongs_to :category
     belongs_to :brand, optional: true
@@ -10,8 +10,6 @@ class Item < ApplicationRecord
     belongs_to_active_hash :item_condition
     belongs_to_active_hash :postage_payer
     belongs_to_active_hash :preparation_day
-
-    accepts_nested_attributes_for :item_images
 
     validates :name, :price, :introduction, :prefecture_id,
     :category_id, :item_condition_id, :postage_payer_id,
@@ -23,16 +21,18 @@ class Item < ApplicationRecord
 
     }
 
-    validate  :image_lists_validation
+    validates :item_images, length: {minimum: 1, maximum: 5, message: "の数が不正です"}
 
-    def image_lists_validation
-      image_validation = item_images
-      if image_validation.length < 1 then
-        errors.add(:item_images, "画像を１枚以上添付してください")
-      elsif image_validation.length > 5
-        errors.add(:item_images, "画像は５枚まで添付可能です")
-      end
-    end
+    # validate  :image_lists_validation
+
+    # def image_lists_validation
+    #   image_validation = item_images
+    #   if image_validation[0].image_url.url == nil then
+    #     errors.add(:item_images, "画像を１枚以上添付してください")
+    #   elsif image_validation.length > 5
+    #     errors.add(:item_images, "画像は５枚まで添付可能です")
+    #   end
+    # end
 
   def self.ladies_items_search(id)
     items = Item.all

@@ -9,9 +9,6 @@
   width: 100%;
 
   .Header {
-      // background-color: aquamarine;
-      // margin: 0 auto;
-      // height: 15vh;
       padding-top: 30px;
       padding: 15px  300px;
       position: relative;
@@ -34,7 +31,6 @@
               height: 35px;
             }
             .searchButton{
-              // width: 36px;
               border: 0;
               cursor: pointer;
               background-color: #3CCACE;
@@ -279,9 +275,7 @@
         height: 60vh;
         width: 100%;
         background-color: #f8f8f8;
-        padding: 60px 0 0;
-        justify-content: center;
-        // text-align: center;
+        padding-top: 20px;
           .head{
             font-size: 28px;
             line-height: 1.4;
@@ -295,52 +289,49 @@
             text-align: center;
           }
       
-      .productLists {
-        display: flex;
-        width: auto;
-        background-color: white;
-        margin-block-start: 1em;
-        margin-block-end: 1em;
-        margin-inline-start: 40px;
-        margin-inline-end: 40px;
-        justify-content: center;
-        margin: 20px 300px;
-
-        .productContent {
-          margin: 10px 0 10px;
-          display: block;
-          margin: 24px 0 8px;
-          color: #3CCACE;
-          text-decoration: none;
-          position: relative;
-          &__image {
-            height: 150px;
-
-            margin: 0;
-            z-index: auto;
-              img {
-              z-index: auto;
-              height: 150px;
-              object-fit: cover;
-            }
-          }
-          &__info {
+          .productLists {
+            display: flex;
+            width: auto;
             background-color: white;
-            color: #333;
-            padding: 16px;
-              .shipping {
-                font-size: 13px;
-                color: gray;
+            margin-block-start: 1em;
+            margin-block-end: 1em;
+            margin-inline-start: 40px;
+            margin-inline-end: 40px;
+            justify-content: center;
+            margin: 20px 300px;
+
+
+            .productContent {
+              margin: 10px 0 10px;
+              display: block;
+              margin: 24px 0 8px;
+              text-decoration: none;
+              width: auto;
+                &__image {
+                  height: 150px;
+                  overflow: hidden;
+                  margin: 0;
+                  z-index: auto;
+                    img {
+                    z-index: auto;
+                    height: 150px;
+                    object-fit: cover;
+                  }
+                }
+                &__info {
+                  background-color: white;
+                  color: #333;
+                  padding: 16px
+                    
+                }
+            }
+
+              .productContent:hover{
+                opacity: 0.5;
+                cursor: pointer;
               }
+
           }
-        }
-
-        .productContent:hover{
-          opacity: 0.5;
-          cursor: pointer;
-        }
-
-      }
     }
         
       .akaiba{
@@ -361,48 +352,49 @@
             text-align: center;
           }
       
-      .productLists {
-        display: flex;
-        width: auto;
-        background-color: white;
-        margin-block-start: 1em;
-        margin-block-end: 1em;
-        margin-inline-start: 40px;
-        margin-inline-end: 40px;
-        justify-content: center;
-        margin: 20px 300px;
-
-
-        .productContent {
-          margin: 10px 0 10px;
-          display: block;
-          margin: 24px 0 8px;
-          text-decoration: none;
-          &__image {
-            height: 150px;
-            overflow: hidden;
-            margin: 0;
-            z-index: auto;
-              img {
-              z-index: auto;
-              height: 150px;
-              object-fit: cover;
-            }
-          }
-          &__info {
+          .productLists {
+            display: flex;
+            width: auto;
             background-color: white;
-            color: #333;
-            padding: 16px
-              
+            margin-block-start: 1em;
+            margin-block-end: 1em;
+            margin-inline-start: 40px;
+            margin-inline-end: 40px;
+            justify-content: center;
+            margin: 20px 300px;
+
+
+            .productContent {
+              margin: 10px 0 10px;
+              display: block;
+              margin: 24px 0 8px;
+              text-decoration: none;
+              width: auto;
+                &__image {
+                  height: 150px;
+                  overflow: hidden;
+                  margin: 0;
+                  z-index: auto;
+                    img {
+                    z-index: auto;
+                    height: 150px;
+                    object-fit: cover;
+                  }
+                }
+                &__info {
+                  background-color: white;
+                  color: #333;
+                  padding: 16px
+                    
+                }
+            }
+
+            .productContent:hover{
+              opacity: 0.5;
+              cursor: pointer;
+            }
+
           }
-        }
-
-        .productContent:hover{
-          opacity: 0.5;
-          cursor: pointer;
-        }
-
-      }
     }
   }
 
