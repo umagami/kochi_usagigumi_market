@@ -48,6 +48,10 @@ class ItemsController < ApplicationController
   def purchase
     @item = Item.find(params[:id])
     @buyer = @item.update(buyer_id: current_user.id)
+    # if @item.buyer_id.present?
+    #   flash[:alert] = '売り切れています。'
+    #   redirect_to item_path(@item.id)
+    # else
     Payjp.api_key = Rails.application.credentials.payjp[:secret_key]
     customer_token = current_user.card.customer_token
     Payjp::Charge.create(

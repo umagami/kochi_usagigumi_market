@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe Destination do
   describe '#create_destination' do
-    it "is valid with a destination_family_name, destination_first_name, destination_kana_family_name, destination_kana_family_name, post_code, prefecture_id, municipality, house_number, building_name, phone_bumber" do
+    it "is valid with a destination_family_name, destination_first_name, destination_kana_family_name, destination_kana_family_name, post_code, prefecture_id, municipality, house_number, building_name, phone_number" do
       destination = build(:destination)
       expect(destination).to be_valid
     end
@@ -49,7 +49,6 @@ describe Destination do
 
     it "is invalid without a prefecture_id" do
       destination = build(:destination, prefecture_id: nil)
-      binding.pry
       destination.valid?
       expect(destination.errors[:prefecture_id]).to include("can't be blank")
     end
