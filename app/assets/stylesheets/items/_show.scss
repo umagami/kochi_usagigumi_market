@@ -143,6 +143,7 @@ td {
       color:#fff;
     }
   }
+
   &__perches {
     box-sizing: border-box;
     line-height: 48px;
@@ -165,6 +166,16 @@ td {
     width: 70%;
     font-size: 18px;
     border-radius: 20px;
+  &__favorite {
+    box-sizing: border-box;
+    border: 1px solid #ffb340;
+    color: #3CCACE;
+    font-size: 18px;
+    border-radius: 40px;
+    padding: 6px 10px;
+    background-color: white;
+    margin-left: 70px;
+    
   }
 }
 
@@ -345,4 +356,5 @@ td {
     color: #333;
     padding: 16px;
   }
+}
 }
