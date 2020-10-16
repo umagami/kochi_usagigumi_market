@@ -13,38 +13,42 @@
             .d
               = @item.postage_payer.name
             .e
-              = @item.price
+              #{@item.price}円
     .confirmItem__price
       .confirmItem__price__info
         .name
-          支払い金額
+          = @item.name
         .data
-          ¥
-          = @item.price
+          #{@item.price}円
     .confirmItem__payment
       .confirmItem__payment__info
         .name
           支払い方法
-        - if @user.cards == []
-          .data
-            = link_to "登録してください", "#"
-        - else
-          .data
-            ok
+        .data
+          - if @card then
+            .user-info-update
+              = link_to "変更する", cards_path, class:"update-btn"
+            = "************" + @card[:last4]
+            %br
+            = @card[:exp_month]
+            \/
+            = @card[:exp_year]
+            %br
+            = @card[:brand]
+          - else
+            = link_to new_card_path do
+              登録してください
     .confirmItem__destination
       .confirmItem__destination__info
         .name
           配送先
-        - if @user.destinations == []
-          .data
-            = link_to "登録してください", "#"
-        - else
-          .data
-            ok
+        .user-info-update
+          = link_to "変更する", "#", class:"update-btn"
+        .data
+          = link_to "登録してください", "#"
     .confirmItem__purchase
       .confirmItem__purchase__info
         .text
           配送先と支払い方法の入力を確認してください。
-        %button.submitBtn{name: "button", type: "submit"}
+        = link_to purchase_item_path(@item), method: :post, class: "submitBtn" do
           購入する
-          

@@ -2,7 +2,7 @@
 %nav
   %ul
     %li
-      = link_to "フリマ", "#"
+      = link_to "フリマ", root_path
     %li
       = link_to "マイページ", "/users/id", class:"aa"
     %li.crumb 支払い方法
@@ -47,7 +47,7 @@
         %li 発送元・お届け先住所変更
       .side-box
         .credit-box
-          = link_to "支払い方法", payment_method_card_path, class: "credit"
+          = link_to "支払い方法", cards_path, class: "credit"
       .side-box
         %li メール/パスワード
       .side-box
@@ -56,13 +56,24 @@
         %li 電話番号の確認
       .side-box
         .log-out-box
-          = link_to "ログアウト", out_user_path, class: "log-out"
+          = link_to "ログアウト", out_user_path(current_user), class: "log-out"
   .main
     .method
       .li 支払い方法
     .method-choose
       .convenience
-        = link_to "クレジットカードを追加", new_card_path, class: "credit"
+        - if @card
+          = "************" + @card[:last4]
+          %br
+          = @card[:exp_month]
+          \/
+          = @card[:exp_year]
+          %br
+          = @card[:brand]
+          %br
+          = link_to "削除する", card_path(current_user.card), method: :delete
+        - else
+          = link_to "クレジットカードを追加", new_card_path, class: "credit"
       .means-top
         .means
           %span 選択した支払い方法を使う

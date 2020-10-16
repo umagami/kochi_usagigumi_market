@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   resources :items, only: [:index, :show, :new, :create, :edit, :update] do
     member do
      get 'buy'
+     post "purchase"
     end
   end
   resources :users, only: [:index, :show] do
@@ -25,11 +26,10 @@ Rails.application.routes.draw do
     end
   end
   resources :cards, only: [:index, :new, :create, :destroy] do
-    member do
-      get 'payment_method'
-      # post 'show', to: 'cards#show'
-      # post 'pay', to: 'cards#pay'
-      # post 'delete', to: 'cards#delete'
+    resources :users, only: [:index, :show] do
+      member do
+        get 'out'
+      end
     end
   end
 end

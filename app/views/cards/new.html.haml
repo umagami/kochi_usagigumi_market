@@ -2,11 +2,11 @@
 %nav
   %ul
     %li
-      = link_to "フリマ", "#"
+      = link_to "フリマ", root_path
     %li
       = link_to "マイページ", "/users/id", class:"aa"
     %li
-      = link_to "支払い方法", "/cards/id/payment_method", class:"aa"
+      = link_to "支払い方法", cards_path, class:"aa"
     %li.crumb クレジットカード情報入力
 .MyPageTop
   .side-bar
@@ -58,35 +58,36 @@
         %li 電話番号の確認
       .side-box
         .log-out-box
-          = link_to "ログアウト", "#", class: "log-out"
+          = link_to "ログアウト", out_user_path(current_user), class: "log-out"
   .main-cregit
     .method-cregit
       .li クレジットカード情報入力
     .input-cregit
-      = form_with model: @card, id: "card_form" do |f|
+      = form_with model: @card, local: true, id: "card_form" do |f|
         .cregit-information 
           = f.label "カード番号"
           %span.hissu 必須
           %br/
-          = f.text_field :number, required: true, class: "number", placeholder: "1234 5678 1234 5678" ,maxlength: "16", type: "text", id: "card_number_form", style:"width:210px;"
+          = f.text_field :number, required: true, class: "number", placeholder: "1234 5678 1234 5678" ,maxlength: 16, type: "text", id: "card_number_form", style:"width:210px;"
           %br
         .cregit-information
           = f.label "有効期限"
           %span.hissu 必須
           %br/
-          = f.select :hoge, 1..12, {include_blank: "---"}, id: "exp_month_form", style:"height:25px;"
+          = f.select :exp_month, 1..12, {include_blank: "---"}, id: "exp_month_form", style:"height:25px;"
           %span 月/
-          = f.select :hoge, [20, 21, 22, 23, 24, 25], {include_blank: "---"}, id: "exp_year_form", style:"height:25px;"
+          = f.select :exp_year, [[20, 2020], [21, 2021], [22, 2022], [23, 2023], [24, 2024], [25, 2025]], {include_blank: "---"}, id: "exp_year_form", style:"height:25px;"
           %span 年
           %br
         .cregit-information
           = f.label "セキュリティコード"
           %span.hissu 必須
           %br/
-          = f.text_field "cvc", required: true, class: "cvc", placeholder: "カード背面3~4桁の番号", maxlength: "4", id: "cvc_form", style:"width:210px;"
+          = f.text_field :cvc, required: true, class: "cvc", placeholder: "カード背面3~4桁の番号", maxlength: 4, id: "cvc_form", style:"width:210px;"
           #card_token
         .cregit-button
-          = submit_tag "追加する", id: "token_submit", class: "button"
+          = f.submit "追加する", id: "regist_card", class: "button"
+          -# = submit_tag "追加する", id: "token_submit", class: "button"
 = render 'items/banner'
 = render 'items/footer'
 .purchaseBtn
