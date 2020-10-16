@@ -87,7 +87,7 @@
                   %p
                     編集
               %button.option__delete{name: "button", type: "submit"}
-                = link_to "#" do
+                = link_to "/items/#{@item.id}", method: :delete do
                   %p
                     削除
             - else
