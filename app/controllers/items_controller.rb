@@ -54,6 +54,14 @@ class ItemsController < ApplicationController
       redirect_to user_session_path
     end
   end
+
+  def search
+    if params[:name].present?
+      @items = Item.where('name LIKE ?', "%#{params[:name]}%")
+    else
+      @users = Item.none
+    end
+  end
   
   private
 
