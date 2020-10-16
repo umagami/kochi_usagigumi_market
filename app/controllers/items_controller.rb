@@ -37,9 +37,9 @@ class ItemsController < ApplicationController
   def update
     if @item.update(item_params)
       redirect_to root_path
-    else 
+    else
       redirect_to edit_item_path
-    end 
+    end
   end
 
   def buy
@@ -90,6 +90,17 @@ class ItemsController < ApplicationController
   #     render :buy
   #   end
   # end
+
+  def destroy
+    @item = Item.find(params[:id])
+      if current_user.id == @item.user_id
+        @item.destroy
+        redirect_to root_path
+      else
+        redirect_to item_path(@item.id)
+      end
+  end
+
 
   private
 
