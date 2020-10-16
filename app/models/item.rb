@@ -27,7 +27,6 @@ class Item < ApplicationRecord
 
     def image_lists_validation
       image_validation = item_images
-      binding.pry
       if image_validation[0].image_url.url == nil then
         errors.add(:item_images, "画像を１枚以上添付してください")
       elsif image_validation.length > 5
