@@ -21,18 +21,18 @@ class Item < ApplicationRecord
 
     }
 
-    # validates :item_images, length: {minimum: 1, maximum: 5, message: "の数が不正です"}
+    validates :item_images, length: {minimum: 1, maximum: 5, message: "の数が不正です"}
 
-    validate  :image_lists_validation
+    # validate  :image_lists_validation
 
-    def image_lists_validation
-      image_validation = item_images
-      if image_validation[0].image_url.url == nil then
-        errors.add(:item_images, "画像を１枚以上添付してください")
-      elsif image_validation.length > 5
-        errors.add(:item_images, "画像は５枚まで添付可能です")
-      end
-    end
+    # def image_lists_validation
+    #   image_validation = item_images
+    #   if image_validation[0].image_url.url == nil then
+    #     errors.add(:item_images, "画像を１枚以上添付してください")
+    #   elsif image_validation.length > 5
+    #     errors.add(:item_images, "画像は５枚まで添付可能です")
+    #   end
+    # end
 
   def self.ladies_items_search(id)
     items = Item.all
