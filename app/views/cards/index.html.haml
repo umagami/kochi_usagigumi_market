@@ -10,7 +10,7 @@
   .side-bar
     .side-boxes
       .side-box
-        %li マイページ
+        = link_to "マイページ", "/users/id", class:"moji"
       .side-box
         %li お知らせ
       .side-box
@@ -79,6 +79,7 @@
           %span 選択した支払い方法を使う
 = render 'items/banner'
 = render 'items/footer'
-.purchaseBtn
-  %span.purchaseBtn__text 出品する
-  = image_tag 'material/icon/icon_camera.png',alt:"icon", class:"icon"
+= link_to new_item_path do
+  .purchaseBtn
+    %span.purchaseBtn__text 出品する
+    = image_tag 'material/icon/icon_camera.png',alt:"icon", class:"icon"

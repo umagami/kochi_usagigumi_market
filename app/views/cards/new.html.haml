@@ -12,7 +12,7 @@
   .side-bar
     .side-boxes
       .side-box
-        %li マイページ
+        = link_to "マイページ", "/users/id", class:"moji"
       .side-box
         %li お知らせ
       .side-box
@@ -49,7 +49,7 @@
         %li 発送元・お届け先住所変更
       .side-box
         .credit-box
-          = link_to "支払い方法", "#", class: "credit"
+          = link_to "支払い方法", cards_path, class: "credit"
       .side-box
         %li メール/パスワード
       .side-box
@@ -90,6 +90,7 @@
           -# = submit_tag "追加する", id: "token_submit", class: "button"
 = render 'items/banner'
 = render 'items/footer'
-.purchaseBtn
-  %span.purchaseBtn__text 出品する
-  = image_tag 'material/icon/icon_camera.png',alt:"icon", class:"icon"
+= link_to new_item_path do
+  .purchaseBtn
+    %span.purchaseBtn__text 出品する
+    = image_tag 'material/icon/icon_camera.png',alt:"icon", class:"icon"
