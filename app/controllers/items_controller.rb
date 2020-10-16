@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :item_find, {only:[:show, :edit, :update, :buy, :access_judge]}
+  before_action :item_find, {only:[:show, :edit, :update, :buy, :purchase, :access_judge]}
   before_action :sign_in_judge, {only:[:edit,:new]}
   before_action :access_judge, {only:[:edit]}
 
@@ -41,12 +41,10 @@ class ItemsController < ApplicationController
   end
 
   def buy
-    @item = Item.find(params[:id])
     @card = Card.get_card(current_user.card.customer_token) if current_user.card
   end
 
   def purchase
-    @item = Item.find(params[:id])
     @buyer = @item.update(buyer_id: current_user.id)
     # if @item.buyer_id.present?
     #   flash[:alert] = '売り切れています。'
