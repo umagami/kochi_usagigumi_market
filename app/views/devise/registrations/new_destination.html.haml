@@ -1,5 +1,5 @@
-.registrations-top
-  = image_tag 'material/logo/logo.png', size: "200x80", alt: "test" ,class: "icon1"
+.destinations-top
+  = image_tag 'material/logo/logo.png', size: "200x100", alt: "test" ,class: "icon1"
   = form_for(@destination, url: destinations_path, method: :@post) do |f|
     = render "devise/shared/error_messages", resource: @destination
     .new_user
@@ -60,4 +60,4 @@
         .actions
           = f.submit "登録する", class:"registration-btn"
         = render "devise/shared/links"
-  = image_tag src='material/logo/logo-white.png', size: "200x80", alt: "test",class:"icon2"
+  = image_tag src='material/logo/logo-white.png', size: "200x100", alt: "test",class:"icon2"

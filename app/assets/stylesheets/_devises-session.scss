@@ -1,5 +1,88 @@
-.destinations-top {
-  height: 160vh;
+.sessions-top {
+  height: 100vh;
+  background-color:#eee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  
+  .icon1 {
+    display: block;
+    padding-top: 40px;
+  }
+
+  .sessions-middle {
+
+    
+    .middle-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-direction: column;
+      border: 1px solid white;
+      padding: 40px;
+      background-color:#f8f8f8;
+
+      p {
+        font-size: 14px;
+      }
+
+      .registration-button {
+        font-size: 14px;
+        color: black;
+        text-decoration: none;
+        margin: 10px;
+        background-color: lightcoral;
+        border: solid 2px black;
+        border-radius: 5px;
+        padding: 5px 50px 5px 50px
+      }
+    }
+
+    .middle-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-direction: column;
+      border: 1px solid white;
+      padding: 30px;
+      margin-top: 2px;
+      background-color:#f8f8f8;
+
+      .mail {
+        font-size: 14px;
+        font-weight: bold;
+      }
+
+      .password {
+        font-size: 14px;
+        font-weight: bold;
+      }
+
+      .login-button {
+        background-color: khaki;
+        height: 30px;
+        width: 200px;
+        margin: 20px;
+        font-size: 14px;
+        border-radius: 5px;
+      }
+
+      .forget-password {
+        text-decoration: none;
+        color: deepskyblue;
+      }
+    }
+  }
+
+  .icon2 {
+    display: block;
+    padding-bottom: 40px;
+  }
+}
+
+.registrations-top {
+  height: 50vh;
   background-color:#eee;
   display: flex;
   justify-content: space-between;
@@ -21,9 +104,10 @@
     align-items: center;
     flex-direction: column;
     padding-top: 10px;
+    height: 550px;
 
     .registrations-middle-top {
-      height: 100px;
+      height: 150px;
       width: 50vw;
       background-color: #f8f8f8;
       display: flex;
@@ -31,6 +115,7 @@
       margin: 2px ;
       margin-top: 10px;
       border: 1px solid white;
+      padding: 20px;
 
       p {
         margin-left: auto;
@@ -41,7 +126,7 @@
     }
 
     .registrations-middle-bottom {
-      height: 800px;
+      height: 500px;
       width: 50vw;
       background-color: #f8f8f8;
       display: flex;
@@ -85,10 +170,6 @@
         font-weight: bold;
       }
 
-      .collection {
-        width: 210px;
-      }
-
       .personal-information {
 
         .family-name-kanji {
@@ -121,8 +202,9 @@
           }
         }
 
-        .form-group {
+        .birthday {
           padding-top: 20px;
+
         }
 
         span {

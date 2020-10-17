@@ -1,5 +1,5 @@
 .registrations-top
-  = image_tag 'material/logo/logo.png', size: "200x80", alt: "test" ,class: "icon1"
+  = image_tag 'material/logo/logo.png', size: "200x100", alt: "test" ,class: "icon1"
   = form_with model: @user_profile, local:true do |f|
     = render "devise/shared/error_messages", resource: @user_profile
     .new_user
@@ -36,4 +36,4 @@
         .actions
           = f.submit "次へ", class:"registration-btn"
         = render "devise/shared/links"
-  = image_tag src='material/logo/logo-white.png', size: "200x80", alt: "test",class:"icon2"
+  = image_tag src='material/logo/logo-white.png', size: "200x100", alt: "test",class:"icon2"
