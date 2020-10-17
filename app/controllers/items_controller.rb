@@ -1,7 +1,9 @@
 class ItemsController < ApplicationController
-  before_action :item_find, {only:[:show, :edit, :update, :buy, :purchase, :access_judge]}
+  before_action :item_find, {only:[:show, :edit, :update, :buy, :purchase, :access_judge, :card_information_check, :item_information_check]}
   before_action :sign_in_judge, {only:[:edit,:new]}
   before_action :access_judge, {only:[:edit]}
+  before_action :card_information_check, {only:[:purchase]}
+  # before_action :item_information_check, {only:[:purchase]}
 
   def index
     @new_items = Item.last(5)
@@ -46,7 +48,7 @@ class ItemsController < ApplicationController
 
   def purchase
     @buyer = @item.update(buyer_id: current_user.id)
-    # if @item.buyer_id.present?
+    # if @item.buyer_id != nil
     #   flash[:alert] = '売り切れています。'
     #   redirect_to item_path(@item.id)
     # else
@@ -58,6 +60,7 @@ class ItemsController < ApplicationController
       currency: 'jpy'
     )
     redirect_to root_path(@item)
+    # end
   end
 
   def access_judge
@@ -71,7 +74,23 @@ class ItemsController < ApplicationController
       redirect_to user_session_path
     end
   end
-  
+
+  def card_information_check
+    @user = User.find(current_user.id)
+    if @user.card == nil
+      flash.now[:alert] = 'カード情報が登録されていません'
+      render :buy
+    end
+  end
+
+  # def item_information_check
+  #   @buyer = @item.update(buyer_id: current_user.id)
+  #   if @item.buyer_id != nil
+  #     flash.now[:alert] = '売り切れています。'
+  #     render :buy
+  #   end
+  # end
+
   private
 
   def item_find

@@ -9,9 +9,7 @@ class CardsController < ApplicationController
 
   def create
     Payjp.api_key = Rails.application.credentials.payjp[:secret_key]
-  
     customer = Payjp::Customer.create(card: params[:payjp_token]) 
-  
     card = current_user.build_card(customer_token: customer.id)
     if card.save
       redirect_to cards_path
