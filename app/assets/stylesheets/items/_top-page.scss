@@ -307,8 +307,10 @@
           color: #3CCACE;
           text-decoration: none;
           position: relative;
+          width: auto;
           &__image {
             height: 150px;
+            overflow: hidden;
             margin: 0;
             z-index: auto;
               img {
@@ -400,6 +402,7 @@
             margin: 0;
             z-index: auto;
             img {
+              // z-index: auto;
               height: 150px;
               object-fit: cover;
             }
@@ -434,7 +437,6 @@
               
           }
         }
-
             .productContent:hover{
               opacity: 0.5;
               cursor: pointer;
