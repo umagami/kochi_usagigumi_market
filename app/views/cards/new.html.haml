@@ -70,6 +70,19 @@
           %br/
           = f.text_field :number, required: true, class: "number", placeholder: "1234 5678 1234 5678" ,maxlength: 16, type: "text", id: "card_number_form", style:"width:210px;"
           %br
+          %ul.card-list
+            %li.card-list--item{ style: "margin-left: 0;"}
+              = image_tag 'material/credit-card/credit-card_22.png', width:"30", height:"20"
+            %li.card-list--item
+              = image_tag 'material/credit-card/credit-card_9.png', width:"35", height:"20"
+            %li.card-list--item  
+              = image_tag 'material/credit-card/credit-card_28.png', width:"35", height:"20"
+            %li.card-list--item  
+              = image_tag 'material/credit-card/credit-card_19.png', width:"32", height:"20"
+            %li.card-list--item
+              = image_tag 'material/credit-card/credit-card_15.png', width:"32", height:"20"
+            %li.card-list--item
+              = image_tag 'material/credit-card/credit-card_8.png', width:"32", height:"20"
         .cregit-information
           = f.label "有効期限"
           %span.hissu 必須
