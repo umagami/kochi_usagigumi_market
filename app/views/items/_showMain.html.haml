@@ -119,7 +119,7 @@
                       .message-info__text__time
                         = comment.created_at.strftime("%Y-%m-%d %H:%M")
             - if user_signed_in?
-              = form_with model: [@item, @comment], action: "/comments", id: "new_comment", local: true do |f|
+              = form_with model: [@item, @comment], menaction: "/comts", id: "new_comment", local: true do |f|
                 = f.text_area :message, id: "comment_body",wrap: "soft"
                 = f.hidden_field :item_id, value: @item.id
                 = f.submit "コメントする", class:"commentBtn"

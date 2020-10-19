@@ -62,9 +62,9 @@ window.addEventListener('load',function(){
           console.log("ok")
           let html = buildHTML(comment_data);
           $('.messages_box').append(html);
-          $('#comment_body').val('');
+          $('#comment_body').val('1234567');
           $('.commentBtn').prop('disabled', false);
-        })
+        })cv
         .fail(function(comment_data) {
           alert("メッセージ送信に失敗しました");
         });
