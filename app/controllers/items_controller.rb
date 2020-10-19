@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :item_find, {only:[:show, :edit, :update, :buy, :purchase, :access_judge, :card_information_check, :item_information_check]}
+  before_action :item_find, {only:[:show, :edit, :update, :destroy, :buy, :purchase, :access_judge, :card_information_check, :item_information_check]}
   before_action :sign_in_judge, {only:[:edit,:new]}
   before_action :access_judge, {only:[:edit]}
   before_action :card_information_check, {only:[:purchase]}
@@ -92,20 +92,31 @@ class ItemsController < ApplicationController
   # end
 
   def destroy
-    @item = Item.find(params[:id])
+    if @item != nil
       if current_user.id == @item.user_id
         @item.destroy
+        flash.now[:alert] = '商品を削除しました'
         redirect_to root_path
       else
+        flash.now[:alert] = '商品の削除が行えませんでした'
         redirect_to item_path(@item.id)
       end
+    else
+      flash.now[:alert] = 'その商品はすでに削除されているか、情報がありません'
+      redirect_to root_path
+    end
   end
 
 
   private
 
   def item_find
-    @item = Item.find(params[:id])
+    if  Item.exists?(params[:id])
+      @item = Item.find(params[:id])
+    else
+      flash.now[:alert] = 'その商品はすでに削除されているか、情報がありません'
+      redirect_to root_path
+    end
   end
 
   def item_params
