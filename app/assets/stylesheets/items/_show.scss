@@ -12,8 +12,6 @@
   margin: 0px auto;
 }
 
-// .topContent{
-// }
 
 .itemInfo {
   background-color: #fff;
@@ -111,7 +109,7 @@ td {
 
 .option {
   display: flex;
-  margin: 25px auto;
+  margin: 35px auto;
   justify-content: center;
   text-align: center;
   color: #fff;
@@ -145,8 +143,8 @@ td {
   &__perches {
     box-sizing: border-box;
     line-height: 48px;
-    background: #9ef2ff;
-    border: 1px solid #3CCACE;
+    background: #6cebff;
+    border: 1px solid #299396;
     color: #fff;
     width: 70%;
     font-size: 18px;
@@ -154,6 +152,16 @@ td {
     p {
       color:#fff;
     }
+  }
+  &__sold-out {
+    box-sizing: border-box;
+    line-height: 48px;
+    background: #939393;
+    border: 1px solid #299396;
+    color: #fff;
+    width: 70%;
+    font-size: 18px;
+    border-radius: 20px;
   }
 }
 

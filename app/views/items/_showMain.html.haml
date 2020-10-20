@@ -91,10 +91,14 @@
                   %p
                     削除
             - else
-              %button.option__perches{name: "button", type: "submit"}
-                = link_to buy_item_path(@item.id) do
-                  %p
-                    購入する
+              - if @item.buyer_id == nil
+                %button.option__perches{name: "button", type: "submit"}
+                  = link_to buy_item_path(@item.id) do
+                    %p
+                      購入する
+              - else
+                .option__sold-out
+                  売り切れました
         .commentInfo
           %form#new_comment.new_comment{action: "", method: "post"}
             %input{name: "utf8", type: "hidden", value: ""}/
