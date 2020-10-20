@@ -142,7 +142,19 @@ td {
       color:#fff;
     }
   }
-  
+  &__perches {
+    box-sizing: border-box;
+    line-height: 48px;
+    background: #9ef2ff;
+    border: 1px solid #3CCACE;
+    color: #fff;
+    width: 70%;
+    font-size: 18px;
+    border-radius: 100px;
+    p {
+      color:#fff;
+    }
+  }
 }
 
 .commentBtn {
@@ -224,3 +236,4 @@ td {
     padding: 16px;
   }
 }
+

@@ -43,7 +43,12 @@ class ItemsController < ApplicationController
   end
 
   def buy
-    @card = Card.get_card(current_user.card.customer_token) if current_user.card
+    if @item.user_id != current_user.id
+      @card = Card.get_card(current_user.card.customer_token) if current_user.card
+    else
+      flash[:alert] = '出品した商品を購入することはできません'
+      redirect_to root_path
+    end
   end
 
   def purchase
