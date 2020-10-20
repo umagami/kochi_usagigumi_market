@@ -81,24 +81,25 @@
                   = @item.preparation_day.name
 
           .option
-            - if @item.user_id == current_user.id
-              %button.option__edit{name: "button", type: "submit"}
-                = link_to edit_item_path(@item.id) do
-                  %p
-                    編集
-              %button.option__delete{name: "button", type: "submit"}
-                = link_to item_path(@item.id), method: :delete do
-                  %p
-                    削除
-            - else
-              - if @item.buyer_id == nil
-                %button.option__perches{name: "button", type: "submit"}
-                  = link_to buy_item_path(@item.id) do
+            - if user_signed_in?
+              - if @item.user_id == current_user.id
+                %button.option__edit{name: "button", type: "submit"}
+                  = link_to edit_item_path(@item.id) do
                     %p
-                      購入する
+                      編集
+                %button.option__delete{name: "button", type: "submit"}
+                  = link_to item_path(@item.id), method: :delete do
+                    %p
+                      削除
               - else
-                .option__sold-out
-                  売り切れました
+                - if @item.buyer_id == nil
+                  %button.option__perches{name: "button", type: "submit"}
+                    = link_to buy_item_path(@item.id) do
+                      %p
+                        購入する
+                - else
+                  .option__sold-out
+                    売り切れました
         .commentInfo
           %form#new_comment.new_comment{action: "", method: "post"}
             %input{name: "utf8", type: "hidden", value: ""}/
