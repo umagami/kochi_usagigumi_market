@@ -14,7 +14,7 @@ Rails.application.routes.draw do
     resources :categories, only: :index, defaults: { format: 'json' }
   end
 
-  resources :items, only: [:index, :show, :new, :create, :edit, :update] do
+  resources :items do
     member do
      get 'buy'
      post "purchase"
