@@ -59,10 +59,9 @@ window.addEventListener('load',function(){
         contentType: false
       })
         .done(function(comment_data){
-          console.log("ok")
           let html = buildHTML(comment_data);
           $('.messages_box').append(html);
-          $('#comment_body').val('1234567');
+          $('#comment_body').val('');
           $('.commentBtn').prop('disabled', false);
         })cv
         .fail(function(comment_data) {
