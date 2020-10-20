@@ -63,7 +63,7 @@ window.addEventListener('load',function(){
           $('.messages_box').append(html);
           $('#comment_body').val('');
           $('.commentBtn').prop('disabled', false);
-        })cv
+        })
         .fail(function(comment_data) {
           alert("メッセージ送信に失敗しました");
         });
