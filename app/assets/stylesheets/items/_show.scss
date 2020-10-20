@@ -143,20 +143,6 @@ td {
       color:#fff;
     }
   }
-
-  &__perches {
-    box-sizing: border-box;
-    line-height: 48px;
-    background: #6cebff;
-    border: 1px solid #299396;
-    color: #fff;
-    width: 70%;
-    font-size: 18px;
-    border-radius: 100px;
-    p {
-      color:#fff;
-    }
-  }
   &__sold-out {
     box-sizing: border-box;
     line-height: 48px;
@@ -166,21 +152,39 @@ td {
     width: 70%;
     font-size: 18px;
     border-radius: 20px;
-  &__favorite {
-    box-sizing: border-box;
-    border: 1px solid #ffb340;
-    color: #3CCACE;
-    font-size: 18px;
-    border-radius: 40px;
-    padding: 6px 10px;
-    background-color: white;
-    margin-left: 70px;
-    display: flex;
-    .favorite{
-      margin-top: 3px;
-      margin-left: 3px;
+  }
+  &__info {
+    display: block;
+    &__favorite {
+      justify-content: center;
+      box-sizing: border-box;
+      border: 1px solid #ffb340;
+      color: #3CCACE;
+      font-size: 14px;
+      border-radius: 40px;
+      padding: 6px 10px;
+      background-color: white;
+      display: flex;
+      margin-left: 187px;
+      .favorite{
+        margin-top: 3px;
+        margin-left: 3px;
+      }    
     }
-    
+    &__perches {
+      margin-top: 30px;
+      box-sizing: border-box;
+      line-height: 44px;
+      background: #6cebff;
+      border: 1px solid #299396;
+      color: #fff;
+      width: 500px;
+      font-size: 18px;
+      border-radius: 100px;
+      p {
+        color:#fff;
+      }
+    }
   }
 }
 
@@ -361,5 +365,4 @@ td {
     color: #333;
     padding: 16px;
   }
-}
 }
