@@ -15,16 +15,19 @@ Rails.application.routes.draw do
   end
 
   resources :items do
+    resources :comments, only:[:create,:update,:destroy]
     member do
      get 'buy'
      post "purchase"
     end
   end
+
   resources :users, only: [:index, :show] do
     member do
       get 'out'
     end
   end
+
   resources :cards, only: [:index, :new, :create, :destroy] do
     resources :users, only: [:index, :show] do
       member do

@@ -64,9 +64,11 @@ body {
       display: flex;
       width: auto;
       justify-content: space-between;
-      &__image {
+        img {
+        width: 100px;
+        height: 100px;
         border-radius: 4px;
-        display: inline-block;
+        object-fit: cover;
       }
       &__a {
         width: 100%;
