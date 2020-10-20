@@ -24,8 +24,10 @@ Rails.application.routes.draw do
   end
 
   resources :users, only: [:index, :show] do
+    resources :favorites,only: [:index]
     member do
       get 'out'
+
     end
   end
 

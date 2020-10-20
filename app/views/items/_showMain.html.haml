@@ -92,12 +92,13 @@
                     %p
                       削除
               - else
-                = form_with url: item_favorites_path(@item.id), id: "new-favorite", local: true do |f|
+                = form_with url: item_favorites_path(@item.id), id: "new-favorite", action: "/favorites", local: true do |f|
                   = f.hidden_field :item_id, value: @item.id
                   %button.option__favorite{name: "button", type: "submit"}
                     %p
                       ★ お気に入り
-                      = @favorites
+                      .favorite
+                        = @favorites
                 .option_buy
                   購入する
               .option_buy

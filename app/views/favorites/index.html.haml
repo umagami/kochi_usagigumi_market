@@ -1,0 +1,80 @@
+= render 'items/header'
+%nav
+  %ul
+    %li
+      = link_to "フリマ", "#"
+    %li.crumb マイページ
+.MyPageTop
+  .side-bar
+    .side-boxes
+      .side-box
+        %li マイページ
+      .side-box
+        %li お知らせ
+      .side-box
+        %li やることリスト
+      .side-box
+        %li いいね！一覧
+      .side-box
+        %li 出品する
+      .side-box
+        %li 下書き一覧
+      .side-box
+        %li 出品した商品 - 出品中 
+      .side-box
+        %li 出品した商品 - 取引中
+      .side-box
+        %li 出品した商品 - 売却済み
+      .side-box
+        %li 購入した商品 - 取引中
+      .side-box
+        %li 購入した商品 - 過去の取引
+      .side-box
+        %li ニュース一覧
+      .side-box
+        %li 評価一覧
+      .side-box
+        %li ガイド
+      .side-box
+        %li お問い合わせ
+    .side-boxes-config
+      %p 設定
+      .side-box
+        %li プロフィール
+      .side-box
+        %li 発送元・お届け先住所変更
+      .side-box
+        .credit-box
+      .side-box
+        %li メール/パスワード
+      .side-box
+        %li 本人情報
+      .side-box
+        %li 電話番号の確認
+      .side-box
+        .log-out-box
+  .main-bar
+    .content
+      %h1.fav お気に入り一覧
+      
+      .information-lists
+        - @favorites.each do |favorite|
+          = link_to item_path(favorite.item.id) do
+            .list
+              = image_tag favorite.item.item_images[0].image_url.url, size: "200x80", alt: "test" ,class: "icon-copy"
+              .info{style: "color:black;"}
+                .name
+                  = favorite.item.name
+                .price
+                  = favorite.item.price
+                  円
+                  
+
+        
+        
+    
+= render 'items/banner'
+= render 'items/footer'
+.purchaseBtn
+  %span.purchaseBtn__text 出品する
+  = image_tag 'material/icon/icon_camera.png',alt:"icon", class:"icon"

@@ -139,9 +139,11 @@ li {
       border: 1px solid white;
       font-size: 14px;
       background-color: #f8f8f8;
+      
 
       li {
         margin: 10px;
+        color: black;
       }
       
       .log-out-box {
@@ -168,11 +170,18 @@ li {
 
   .content {
     background-color: #f8f8f8;
-    height: 600px;
+    // height: 600px;
     width: 700px;
     margin-top: 50px;
     margin-left: 80px;
     position: relative;
+
+      .fav{
+        font-size: 24px;
+        padding: 8px 24px;
+        text-align: center;
+        font-weight: bolder;
+      }
 
     .natu {
       height: 250px;
@@ -245,6 +254,16 @@ li {
         height: 60px;
         margin-top: 0;
         display: flex;
+        font-size: 14px;
+
+          .name{
+            margin-top: 3px;
+            margin-bottom:5px ;
+            
+          }
+          .price{
+            
+          }
 
         .icon-copy {
           height: 30px;
@@ -255,6 +274,7 @@ li {
         li {
           margin-top: 20px;
         }
+
       }
       
       .information-table {
