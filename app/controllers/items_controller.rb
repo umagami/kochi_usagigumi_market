@@ -44,6 +44,10 @@ class ItemsController < ApplicationController
 
   def buy
     if @item.user_id != current_user.id
+      if @item.buyer_id != nil
+        flash[:alert] = 'この商品はすでに売れています'
+        redirect_to root_path
+      end
       @card = Card.get_card(current_user.card.customer_token) if current_user.card
     else
       flash[:alert] = '出品した商品を購入することはできません'
