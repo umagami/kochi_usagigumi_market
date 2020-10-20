@@ -95,14 +95,14 @@ class ItemsController < ApplicationController
     if @item != nil
       if current_user.id == @item.user_id
         @item.destroy
-        flash.now[:alert] = '商品を削除しました'
+        flash[:alert] = '商品を削除しました'
         redirect_to root_path
       else
-        flash.now[:alert] = '商品の削除が行えませんでした'
+        flash[:alert] = '商品の削除が行えませんでした'
         redirect_to item_path(@item.id)
       end
     else
-      flash.now[:alert] = 'その商品はすでに削除されているか、情報がありません'
+      flash[:alert] = 'その商品はすでに削除されているか、情報がありません'
       redirect_to root_path
     end
   end
@@ -114,7 +114,7 @@ class ItemsController < ApplicationController
     if  Item.exists?(params[:id])
       @item = Item.find(params[:id])
     else
-      flash.now[:alert] = 'その商品はすでに削除されているか、情報がありません'
+      flash[:alert] = 'その商品はすでに削除されているか、情報がありません'
       redirect_to root_path
     end
   end
