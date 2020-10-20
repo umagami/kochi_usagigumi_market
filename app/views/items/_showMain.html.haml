@@ -113,13 +113,13 @@
             %button.commentBtn{name: "button", type: "submit"}
               コメントする
         .link
-          %ul.links
-            %li
-              .link-left
-                = link_to "< 前の商品", "#" 
-            %li
-              .link-right
-                = link_to "後ろの商品 >", "#" 
+          .links
+            .link-left
+              = link_to item_path(@item.id + 1) do
+                << 前の商品
+            .link-right
+              = link_to item_path(@item.id - 1) do
+                後ろの商品 >>
         .etcItems
           =link_to "#{@categoryParent.name}  をもっと見る"
         .productLists
