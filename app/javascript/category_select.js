@@ -16,7 +16,7 @@ window.addEventListener('load', function () {
 
       const html = `
                   <br class=“${relation}“>
-                  <select required=“required” class="select-category ${relation}" id="parent-category" name="item[category_id]">
+                  <select required=“required” class="select-category ${relation}" id="parent-category" name="item[category_${relation}]">
                     <option value="${relation}">選択してください</option>
                     ${options}
                   </select>
@@ -52,7 +52,6 @@ window.addEventListener('load', function () {
         },
         dataType: 'json',
         }).done(function (categories) {
-          console.log(categories.array)
           if(categories.array.length != 0){
             existForm(categories.array);
             const html = buildCategoryForm(categories.array);
