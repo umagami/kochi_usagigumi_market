@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   before_action :item_find, {only:[:show, :edit, :update, :destroy, :buy, :purchase, :access_judge, :card_information_check, :item_information_check]}
-  before_action :sign_in_judge, {only:[:edit,:new]}
+  before_action :sign_in_judge, {only:[:edit,:new,:buy,:destroy]}
   before_action :access_judge, {only:[:edit]}
   before_action :card_information_check, {only:[:purchase]}
   # before_action :item_information_check, {only:[:purchase]}
