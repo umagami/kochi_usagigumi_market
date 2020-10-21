@@ -1,11 +1,15 @@
 $(window).on('load', ()=> {
   const buildFileField = (index)=> {
-    const html = `<div data-index="${index}" class="js-file_group">
+    const html = `<div  class="js-file_group" data-index="${index}">
+                  <label class="label" for="item_item_images_attributes_${index}_image_url">
+                    <div class="image-icon">
+                      <i class="fas fa-camera fa-4x"></i>
+                    </div>
                     <input class="js-file" type="file"
                     name="item[item_images_attributes][${index}][image_url]"
-                    id="item_images_attributes_${index}_image_url"><br>
-                    <div class="js-edit">編集</div>
+                    id="item_item_images_attributes_${index}_image_url"><br>
                     <div class="js-remove">削除</div>
+                    </label>
                   </div>`;
     return html;
   }
@@ -15,7 +19,7 @@ $(window).on('load', ()=> {
   }
 
   // file_fieldのnameに動的なindexをつける為の配列
-  let fileIndex = [1,2,3,4,5,6,7,8,9,10];
+  let fileIndex = [1,2,3,4];
   lastIndex = $('.js-file_group:last').data('index');
   fileIndex.splice(0, lastIndex);
 

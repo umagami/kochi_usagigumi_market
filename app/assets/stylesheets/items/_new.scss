@@ -1,3 +1,17 @@
+.image-icon {
+  display: flex;
+  width: 100px;
+  height: 100px;
+  margin: 5px;
+  border: 3px dashed #3CCACE;
+  border-radius: 10px;
+  justify-content: center;
+}
+
+#image-box {
+  display: flex;
+}
+
 .sell{
   display: flex;
   position: relative;
@@ -18,18 +32,19 @@
       margin: 20px;
     }
   }
-
   .js-file_group {
-    width: 200px;
-    height: 200px;
-    background-color: cyan;
-    .js-file {
-      display: none;
-    }
-    label {
-      
+    .label {
+      input{
+        display: none;
+      }
+      i {
+        color:#3CCACE;
+        margin: auto 0px;
+      }
     }
   }
+
+
 
 
   .sell__picture__text{
