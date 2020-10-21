@@ -42,14 +42,44 @@
     .confirmItem__destination
       .confirmItem__destination__info
         .name
-          配送先
-        .user-info-update
-          = link_to "変更する", "#", class:"update-btn"
+          配送先  
         .data
-          = link_to "登録してください", "#"
+          .dateA
+            .date__b
+              氏名:
+            .date__c
+              = current_user.destinations[0].destination_family_name
+              = current_user.destinations[0].destination_first_name
+          .dateA
+            .date__b
+              郵便番号:
+            .date__c
+              = current_user.destinations[0].post_code
+          .dateA
+            .date__b
+              都道府県:
+            .date__c
+              = current_user.destinations[0].prefecture.name
+          .dateA
+            .date__b
+              市町村:
+            .date__c
+              = current_user.destinations[0].municipality
+          .dateA
+            .date__b
+              番地:
+            .date__c
+              = current_user.destinations[0].house_number
+          - if current_user.destinations[0].building_name != ""
+            .dateA
+              .date__b
+                マンション・アパート名:
+              .date__c  
+                = current_user.destinations[0].building_name
     .confirmItem__purchase
       .confirmItem__purchase__info
-        .text
-          配送先と支払い方法の入力を確認してください。
+        - if current_user.destinations != [] || current_user.card != nil
+          .text
+            配送先と支払い方法の入力を確認してください。
         = link_to purchase_item_path(@item), method: :post, class: "submitBtn" do
           購入する
