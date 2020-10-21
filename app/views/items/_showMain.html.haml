@@ -92,14 +92,22 @@
                     %p
                       削除
               - else
-                - if @item.buyer_id == nil
-                  %button.option__perches{name: "button", type: "submit"}
-                    = link_to buy_item_path(@item.id) do
+                .option__info
+                  = form_with url: item_favorites_path(@item.id), id: "new-favorite", action: "/favorites", local: true do |f|
+                    = f.hidden_field :item_id, value: @item.id
+                    %button.option__info__favorite{name: "button", type: "submit"}
                       %p
-                        購入する
-                - else
-                  .option__sold-out
-                    売り切れました
+                        ★ お気に入り
+                        .favorite
+                          = @favorites
+                  - if @item.buyer_id == nil
+                    %button.option__info__perches{name: "button", type: "submit"}
+                      = link_to buy_item_path(@item.id) do
+                        %p
+                          購入する
+                  - else
+                    .option__sold-out
+                      売り切れました
         .commentInfo
           .comment_box
             .messages_box

@@ -14,7 +14,8 @@
       .side-box
         %li やることリスト
       .side-box
-        %li いいね！一覧
+        = link_to  user_favorites_path(@user.id) do
+          %li いいね！一覧
       .side-box
         %li 出品する
       .side-box
