@@ -16,7 +16,7 @@ window.addEventListener('load', function () {
 
       const html = `
                   <br class=“${relation}“>
-                  <select required=“required” class="select-category ${relation}" id="parent-category" name="item[category_${relation}]">
+                  <select required=“required” class="select-category ${relation}" id="parent-category" name="item[category_id]">
                     <option value="${relation}">選択してください</option>
                     ${options}
                   </select>
