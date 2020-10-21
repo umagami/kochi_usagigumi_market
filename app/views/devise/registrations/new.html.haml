@@ -1,5 +1,5 @@
 .registrations-top
-  = image_tag 'material/logo/logo.png', size: "200x100", alt: "test" ,class: "icon1"
+  = link_to image_tag('material/logo/logo.png', size: "200x100", alt: "test" ,class: "icon1"), "/"
   = form_for(@user, url: user_registration_path) do |f|
     -# ここでurlを指定することで、submitボタンが押された時に次のページへ遷移してくれる。
     = render "devise/shared/error_messages", resource: @user

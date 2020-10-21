@@ -1,5 +1,5 @@
 .destinations-top
-  = image_tag 'material/logo/logo.png', size: "200x100", alt: "test" ,class: "icon1"
+  = link_to image_tag('material/logo/logo.png', size: "200x100", alt: "test" ,class: "icon1"), "/"
   = form_for(@destination, url: destinations_path, method: :@post) do |f|
     = render "devise/shared/error_messages", resource: @destination
     .new_user

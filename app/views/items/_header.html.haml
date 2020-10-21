@@ -1,7 +1,7 @@
 .Header
   .mainHeader
     .icon
-      = image_tag 'material/logo/logo.png', size:"140x40",alt:"test", class:"icon"
+      = link_to image_tag('material/logo/logo.png', size:"140x40",alt:"test", class:"icon"), "/"
     .searchBox
       %form{"accept-charset" => "UTF-8", :action => "#", :method => "get"}
       %input{name: "utf8", type: "hidden", value: "✓"}/

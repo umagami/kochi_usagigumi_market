@@ -1,5 +1,5 @@
 .sessions-top
-  = image_tag 'material/logo/logo.png', size: "200x100", alt: "test" ,class: "icon1"
+  = link_to image_tag('material/logo/logo.png', size: "200x100", alt: "test" ,class: "icon1"), "/"
   .sessions-middle
     = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
       .middle-top

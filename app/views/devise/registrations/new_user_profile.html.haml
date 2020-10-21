@@ -1,5 +1,5 @@
 .registrations-top
-  = image_tag 'material/logo/logo.png', size: "200x100", alt: "test" ,class: "icon1"
+  = link_to image_tag('material/logo/logo.png', size: "200x100", alt: "test" ,class: "icon1"), "/"
   = form_with model: @user_profile, local:true do |f|
     = render "devise/shared/error_messages", resource: @user_profile
     .new_user
