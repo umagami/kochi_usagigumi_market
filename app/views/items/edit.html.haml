@@ -1,5 +1,14 @@
+= render 'layouts/notifications'
+.hetterLogo
+  = link_to image_tag("material/logo/logo.png", class: "hetterLogo__logo"), "/"
 .sell
   %section.sell-container
+    .sell-container__picture
+      .sell__picture
+        %h3.sell__picture__text
+          出品画像
+          %span.sell__picture__photo
+            必須
     = form_with model:@item, local: true do |f|
       - if @item.errors.any?
         .alert.alert-warning
@@ -22,7 +31,6 @@
           .js-file_group{"data-index" => "#{@item.item_images.count}"}
             = file_field_tag :image_url, name: "item[item_images_attributes][#{@item.item_images.count}][image_url]", class: 'js-file'
             .js-remove 削除
-
       .sell-container__content
         .sell-title
           %h3.sell-title__text
@@ -32,7 +40,7 @@
         = f.text_field :name, {class:'sell-container__content__name', required: "required", placeholder: '商品名（必須 40文字まで)'}
 
         .sell-title
-          %h3.sell-title__text
+          %h3.sell-title__text2
             商品の説明
             %span.sell-title__require
               必須
@@ -43,17 +51,17 @@
           %h3.sell-sub-head 商品の詳細
           .sell-container__content__details
             .sell-title
-              %h3.sell-title__text
+              %h3.sell-title__text3
                 カテゴリー
                 %span.sell-title__require
                   必須
             .sell-collection_select
               = f.label :category_id, {class: 'sell-collection_select__label'} do
-                = f.collection_select :category_id, Category.roots, :id, :name, {prompt: "選択して下さい"},{ class: 'sell-collection_select__input', id: 'category-select', required: "required"}
+                = f.collection_select :category_id, Category.roots, :id, :name, {prompt: "選択して下さい"},class: "select-category", id: "parent-category"
                 %i.fas.fa-chevron-down
 
             .sell-title
-              %h3.sell-title__text
+              %h3.sell-title__text4
                 商品の状態
                 %span.sell-title__require
                   必須
@@ -63,13 +71,13 @@
                 %i.fas.fa-chevron-down
 
         .sell-container__content
-          %h3.sell-sub-head
+          %h3.sell-sub-head2
             %p 配送について
             = link_to "#" do
               %i.far.fa-question-circle
           .sell-container__content__delivery
             .sell-title
-              %h3.sell-title__text
+              %h3.sell-title__text5
                 配送料の負担
                 %span.sell-title__require
                   必須
@@ -79,7 +87,7 @@
                 %i.fas.fa-chevron-down
 
             .sell-title
-              %h3.sell-title__text
+              %h3.sell-title__text6
                 発送元の地域
                 %span.sell-title__require
                   必須
@@ -89,7 +97,7 @@
                 %i.fas.fa-chevron-down
 
             .sell-title
-              %h3.sell-title__text
+              %h3.sell-title__text7
                 発送までの日数
                 %span.sell-title__require
                   必須
@@ -99,19 +107,19 @@
                 %i.fas.fa-chevron-down
 
         .sell-container__content
-          %h3.sell-sub-head
+          %h3.sell-sub-head3
             = link_to "#" do
               %i.far.fa-question-circle
           .sell-container__content__price
             .sell-title
-              %h3.sell-title__text
+              %h3.sell-title__text8
                 販売価格
                 %span.sell-title__require
                   必須
             .sell-container__content__price__form
               = f.label :price, class: 'sell-container__content__price__form__label' do
                 ¥
-                = f.number_field :price, {placeholder: '0', value: '', autocomplete:"off", class: 'sell-container__content__price__form__box', required: "required"}
+                = f.number_field :price, {placeholder: '0', value: @item.price , autocomplete:"off", class: 'sell-container__content__price__form__box', required: "required"}
 
           .sell-container__content__commission
             .sell-container__content__commission__left
@@ -125,3 +133,5 @@
       .submit-btn
         = f.submit '変更する', class: 'submit-btn__sell-btn'
         = link_to 'もどる', root_path, class: 'submit-btn__return-btn'
+.footerLogo
+  .footerLogo__logo
