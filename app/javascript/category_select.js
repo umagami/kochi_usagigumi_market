@@ -1,6 +1,6 @@
 window.addEventListener('load', function () {
   if (!$('.select-category')[0]) return false; 
-  console.log(1234)
+
     function buildCategoryForm(categories) { 
       let options = "";
       if(categories[0].ancestry.indexOf("/", 0) == -1){

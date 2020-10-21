@@ -31,9 +31,6 @@
           .js-file_group{"data-index" => "#{@item.item_images.count}"}
             = file_field_tag :image_url, name: "item[item_images_attributes][#{@item.item_images.count}][image_url]", class: 'js-file'
             .js-remove 削除
-
-      
-
       .sell-container__content
         .sell-title
           %h3.sell-title__text
@@ -43,7 +40,7 @@
         = f.text_field :name, {class:'sell-container__content__name', required: "required", placeholder: '商品名（必須 40文字まで)'}
 
         .sell-title
-          %h3.sell-title__text2
+          %h3.sell-title__text
             商品の説明
             %span.sell-title__require
               必須
@@ -54,7 +51,7 @@
           %h3.sell-sub-head 商品の詳細
           .sell-container__content__details
             .sell-title
-              %h3.sell-title__text3
+              %h3.sell-title__text
                 カテゴリー
                 %span.sell-title__require
                   必須
@@ -64,7 +61,7 @@
                 %i.fas.fa-chevron-down
 
             .sell-title
-              %h3.sell-title__text4
+              %h3.sell-title__text
                 商品の状態
                 %span.sell-title__require
                   必須
@@ -74,13 +71,13 @@
                 %i.fas.fa-chevron-down
 
         .sell-container__content
-          %h3.sell-sub-head2
+          %h3.sell-sub-head
             %p 配送について
             = link_to "#" do
               %i.far.fa-question-circle
           .sell-container__content__delivery
             .sell-title
-              %h3.sell-title__text5
+              %h3.sell-title__text
                 配送料の負担
                 %span.sell-title__require
                   必須
@@ -90,7 +87,7 @@
                 %i.fas.fa-chevron-down
 
             .sell-title
-              %h3.sell-title__text6
+              %h3.sell-title__text
                 発送元の地域
                 %span.sell-title__require
                   必須
@@ -100,7 +97,7 @@
                 %i.fas.fa-chevron-down
 
             .sell-title
-              %h3.sell-title__text7
+              %h3.sell-title__text
                 発送までの日数
                 %span.sell-title__require
                   必須
@@ -115,7 +112,7 @@
               %i.far.fa-question-circle
           .sell-container__content__price
             .sell-title
-              %h3.sell-title__text8
+              %h3.sell-title__text
                 販売価格
                 %span.sell-title__require
                   必須
