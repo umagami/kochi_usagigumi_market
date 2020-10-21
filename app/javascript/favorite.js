@@ -23,7 +23,7 @@ window.addEventListener('load',function(){
     .done(function(data){
       let html = buildHTML(data);
       $('.favorite').remove();
-      $('.option__favorite').append(html);
+      $('.option__info__favorite').append(html);
     })
     .fail(function(data){
       alert("うんこ");
