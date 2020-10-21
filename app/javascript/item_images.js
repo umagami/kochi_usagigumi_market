@@ -4,6 +4,7 @@ $(window).on('load', ()=> {
                     <input class="js-file" type="file"
                     name="item[item_images_attributes][${index}][image_url]"
                     id="item_images_attributes_${index}_image_url"><br>
+                    <div class="js-edit">編集</div>
                     <div class="js-remove">削除</div>
                   </div>`;
     return html;

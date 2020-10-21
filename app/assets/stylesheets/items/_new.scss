@@ -6,6 +6,31 @@
   background-color: #f8f8f8;
   font-size: 14px;
 
+  #previews {
+    display: flex;
+    img {
+      margin: 15px;
+    }
+    &__field{
+      height: 100px;
+      width: 100px;
+      background-color: cyan;
+      margin: 20px;
+    }
+  }
+
+  .js-file_group {
+    width: 200px;
+    height: 200px;
+    background-color: cyan;
+    .js-file {
+      display: none;
+    }
+    label {
+      
+    }
+  }
+
 
   .sell__picture__text{
     font-weight: bold;
@@ -208,4 +233,5 @@
     }
    }
 }
+
 
