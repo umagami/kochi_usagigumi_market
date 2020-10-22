@@ -78,8 +78,19 @@
                 = current_user.destinations[0].building_name
     .confirmItem__purchase
       .confirmItem__purchase__info
-        - if current_user.destinations != [] || current_user.card != nil
+        - if current_user.destinations[0].persisted? && current_user.card == nil
           .text
-            配送先と支払い方法の入力を確認してください。
-        = link_to purchase_item_path(@item), method: :post, class: "submitBtn" do
-          購入する
+            カード情報を登録してください
+        - elsif current_user.destinations[0] == "" && current_user.card.persisted?
+          .text
+            送付先情報を登録してください
+        - elsif current_user.destinations[0].persisted? && current_user.card.persisted?
+          .text
+            = link_to purchase_item_path(@item), method: :post, class: "submitBtn" do
+              購入する
+        - else 
+          .text
+            カード情報と送付先情報を登録してください
+
+        -# = link_to purchase_item_path(@item), method: :post, class: "submitBtn" do
+        -#   購入する
