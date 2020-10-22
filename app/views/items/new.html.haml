@@ -26,7 +26,6 @@
               = image.file_field :image_url, class: 'js-file'
               .image-icon
                 = icon 'fas', 'camera fa-4x'
-            %br/
             %span.js-remove 削除
           - if @item.persisted?
             = image.check_box :_destroy, data:{ index: image.index }, class: 'hidden-destroy'

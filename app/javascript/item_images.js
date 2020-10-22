@@ -7,9 +7,9 @@ $(window).on('load', ()=> {
                     </div>
                     <input class="js-file" type="file"
                     name="item[item_images_attributes][${index}][image_url]"
-                    id="item_item_images_attributes_${index}_image_url"><br>
-                    <div class="js-remove">削除</div>
+                    id="item_item_images_attributes_${index}_image_url">
                     </label>
+                    <span class="js-remove">削除</span>
                   </div>`;
     return html;
   }
