@@ -60,10 +60,6 @@ class ItemsController < ApplicationController
 
   def purchase
     @buyer = @item.update(buyer_id: current_user.id)
-    # if @item.buyer_id != nil
-    #   flash[:alert] = '売り切れています。'
-    #   redirect_to item_path(@item.id)
-    # else
     Payjp.api_key = Rails.application.credentials.payjp[:secret_key]
     customer_token = current_user.card.customer_token
     Payjp::Charge.create(
@@ -71,8 +67,8 @@ class ItemsController < ApplicationController
       customer: customer_token,
       currency: 'jpy'
     )
+    flash[:alert] = '商品を購入しました'
     redirect_to root_path(@item)
-    # end
   end
 
   def access_judge
