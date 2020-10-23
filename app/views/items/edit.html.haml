@@ -21,7 +21,7 @@
             - if image.persisted?
               .content{data: {count: i, index: i}}
                 = image_tag image.image_url.url, data: { index: i }, width: "100", height: '100', class: 'images'
-                .image-option{"data-inde" => "#{i}"}
+                .image-option{"data-index" => "#{i}"}
                   %span.js-remove 削除
         = f.fields_for :item_images do |image|
           %li{class: "file_#{image.index}", "data-index" => "#{image.index}"}

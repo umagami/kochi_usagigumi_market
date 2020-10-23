@@ -49,14 +49,13 @@ $(window).on('load', ()=> {
   $('#image-box').on('click', '.js-remove', function() {
     const targetIndex = $(this).parent().data('index')
     const hiddenCheck = $(`input[data-index="${targetIndex}"].hidden-destroy`);
+    console.log(targetIndex)
     console.log(hiddenCheck)
     
     if (hiddenCheck) hiddenCheck.prop('checked', true);
     $(this).parent().parent().remove();
     $(`.file_${targetIndex}`).remove();
-
     $(`.image-label_${targetIndex}`).remove();
-    //$(`img[data-index="${targetIndex}"]`).remove();
      if ($('li').length == 0 || $('li').length == 4) {
      $('#image-box').append(buildFileField(targetIndex))
      };

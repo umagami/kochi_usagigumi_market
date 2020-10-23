@@ -26,9 +26,9 @@
             = image.file_field :image_url, class: 'js-file'
             - if @item.persisted?
               = image.check_box :_destroy, data:{ index: image.index }, class: 'hidden-destroy'
-        %label{for: "item_item_images_attributes_#{@item.item_images.length - 1}_image_url", class: "image-label_#{@item.item_images.length - 1}"}
-          .image-icon
-            %i.fas.fa-camera.icon
+          %label{for: "item_item_images_attributes_#{@item.item_images.length - 1}_image_url", class: "image-label_#{@item.item_images.length - 1}"}
+            .image-icon
+              %i.fas.fa-camera.icon
 
       .sell-container__content
         .sell-title
