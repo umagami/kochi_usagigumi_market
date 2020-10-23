@@ -23,20 +23,13 @@
                 = image_tag image.image_url.url, data: { index: i }, width: "100", height: '100', class: 'images'
                 .edit-remove_btn-box{data: {index: i}}
         = f.fields_for :item_images do |image|
-          .file{"data-index" => "#{image.index}"}
+          %li.file_0{"data-index" => "#{image.index}"}
             = image.file_field :image_url, class: 'js-file'
           - if @item.persisted?
             = image.check_box :_destroy, data:{ index: image.index }, class: 'hidden-destroy'
-        %label{for: "item_item_images_attributes_#{@item.item_images.length - 1}_image_url", class: 'image-label'}
+        %label{for: "item_item_images_attributes_#{@item.item_images.length - 1}_image_url", class: 'image-label_0'}
           .image-icon
             %i.fas.fa-camera.icon
-        -#     %span.js-remove 削除
-        -#   - if @item.persisted?
-        -#     = image.check_box :_destroy, data:{ index: image.index }, class: 'hidden-destroy'
-        -# - if @item.persisted?
-        -#   .js-file_group{"data-index" => "#{@item.item_images.count}"}
-        -#     = file_field_tag :image_url, name: "item[item_images_attributes][#{@item.item_images.count}][image_url]", class: 'js-file'
-        -#     .js-remove 削除
 
       .sell-container__content
         .sell-title
