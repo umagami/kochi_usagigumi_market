@@ -1,15 +1,112 @@
-.image-icon {
-  display: flex;
-  width: 100px;
-  height: 100px;
-  margin: 5px;
-  border: 3px dashed #3CCACE;
-  border-radius: 10px;
-  justify-content: center;
-}
-
 #image-box {
   display: flex;
+  #previews {
+    width: auto;
+    display: flex;
+    .content {
+      margin: 15px;
+      .image-option {
+        display: flex;
+        justify-content: space-between;
+        .edit {
+          border: 1px dashed #7a8586;
+          margin-left: 10px;
+          padding: 2px 3px;
+        }
+        .js-remove {
+          border: 1px dashed #ffadad;
+          margin-right: 10px;
+          padding: 2px 4px;
+        }
+      }
+    }
+  }
+
+  .image-icon {
+    display: flex;
+    width: 100px;
+    height: 100px;
+    margin: 15px;
+    border: 3px dashed #3CCACE;
+    border-radius: 10px;
+    justify-content: center;
+      .icon {
+        margin: auto 0;
+        color: #3CCACE;
+        font-size: 40px;
+      }
+  }
+  .file_0 {
+    .js-file {
+      display: none;
+    }
+  }
+  .file_1 {
+    .js-file {
+      display: none;
+    }
+  }
+  .file_2 {
+    .js-file {
+      display: none;
+    }
+  }
+  .file_3 {
+    .js-file {
+      display: none;
+    }
+  }
+  .file_4 {
+    .js-file {
+      display: none;
+    }
+  }
+  .file_5 {
+    .js-file {
+      display: none;
+    }
+  }
+  .file_6 {
+    .js-file {
+      display: none;
+    }
+  }
+  .file_7 {
+    .js-file {
+      display: none;
+    }
+  }
+  .file_8 {
+    .js-file {
+      display: none;
+    }
+  }
+  .file_9 {
+    .js-file {
+      display: none;
+    }
+  }
+  .file_10 {
+    .js-file {
+      display: none;
+    }
+  }
+  .file_11 {
+    .js-file {
+      display: none;
+    }
+  }
+  .file_12 {
+    .js-file {
+      display: none;
+    }
+  }
+  .file_13 {
+    .js-file {
+      display: none;
+    }
+  }
+
 }
 
 .sell{
@@ -19,33 +116,7 @@
   color: rgb(51, 51, 51);
   background-color: #f8f8f8;
   font-size: 14px;
-
-  #previews {
-    display: flex;
-    img {
-      margin: 15px;
-    }
-    &__field{
-      height: 100px;
-      width: 100px;
-      background-color: cyan;
-      margin: 20px;
-    }
-  }
-  .js-file_group {
-    .label {
-      input{
-        display: none;
-      }
-      i {
-        color:#3CCACE;
-        margin: auto 0px;
-      }
-    }
-  }
-
-
-
+  
 
   .sell__picture__text{
     font-weight: bold;

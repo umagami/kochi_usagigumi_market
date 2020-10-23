@@ -19,22 +19,24 @@
         #previews
           - if @item.persisted?
             - @item.item_images.each_with_index do |image, i|
-              = image_tag image.image_url.url, data: { index: i }, width: "100", height: '100'
+              .previews__field{data: {count: i, index: i}}
+                = image_tag image.image_url.url, data: { index: i }, width: "100", height: '100', class: 'images'
+                .edit-remove_btn-box{data: {index: i}}
         = f.fields_for :item_images do |image|
-          .js-file_group{"data-index" => "#{image.index}"}
-            %label{for: "item_item_images_attributes_#{@item.item_images.length - 1}_image_url", class: 'label'}
-              = image.file_field :image_url, class: 'js-file'
-              .image-icon
-                = icon 'fas', 'camera fa-4x'
-            %span.js-remove 削除
+          .file_0{"data-index" => "#{image.index}"}
+            = image.file_field :image_url, class: 'js-file'
           - if @item.persisted?
             = image.check_box :_destroy, data:{ index: image.index }, class: 'hidden-destroy'
-        - if @item.persisted?
-          .js-file_group{"data-index" => "#{@item.item_images.count}"}
-            = file_field_tag :image_url, name: "item[item_images_attributes][#{@item.item_images.count}][image_url]", class: 'js-file'
-            .js-remove 削除
-
-      
+        %label{for: "item_item_images_attributes_#{@item.item_images.length - 1}_image_url", class: 'image-label'}
+          .image-icon
+            %i.fas.fa-camera.icon
+        -#     %span.js-remove 削除
+        -#   - if @item.persisted?
+        -#     = image.check_box :_destroy, data:{ index: image.index }, class: 'hidden-destroy'
+        -# - if @item.persisted?
+        -#   .js-file_group{"data-index" => "#{@item.item_images.count}"}
+        -#     = file_field_tag :image_url, name: "item[item_images_attributes][#{@item.item_images.count}][image_url]", class: 'js-file'
+        -#     .js-remove 削除
 
       .sell-container__content
         .sell-title
