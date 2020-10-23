@@ -1,7 +1,7 @@
 $(window).on('load', ()=> {
   const buildFileField = (index)=> {
     if (index < 5) {
-    var html = `<div class="file_${index}" data-index="${index}">
+    var html = `<div class="file" data-index="${index}">
                     <input class="js-file" type="file" 
                     name="item[item_images_attributes][${index}][image_url]" 
                     id="item_item_images_attributes_${index}_image_url">
