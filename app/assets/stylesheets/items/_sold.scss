@@ -1,0 +1,23 @@
+.sold{
+  width: 0;
+  height: 0;
+  border-width: 110px 110px 0 0;
+  border-color:#3CCACE transparent transparent transparent;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  border-style: solid;
+  .sold-inner{
+    top: -90px;
+    font-size: 25px;
+    position: absolute;
+    left: 0;
+    z-index: 2;
+    color: #fff;
+    transform: rotate(-45deg);
+    letter-spacing: 1px;
+    font-weight: 600;
+  }
+}

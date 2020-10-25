@@ -254,6 +254,11 @@
               color: gray;
               margin-top: 40px;
               border-top:solid 1px gainsboro;
+              color: gray;
+              border-top:solid 1px gainsboro;
+              padding-top: 20px;
+              padding-bottom: 0px;
+              display: flex;
             }
 
             .sell-sub-head3{
@@ -265,6 +270,7 @@
               font-size: 15px;
               margin-bottom: 15px;
               &__text{
+                padding-top: 20px;
                 font-weight: bold;
                 border-top:solid 1px gainsboro
               }
@@ -332,14 +338,15 @@
             }
 
             .sell-collection_select{
+              
               .select-category{
                 width: 100%;
-                height: 45px;
+                height: 35px;
                 margin-bottom: 5px;
               }
               .sell-collection_select__input{
                 width: 100%;
-                height: 45px;
+                height: 35px;
               }
             }
 
@@ -393,6 +400,7 @@
                 width: 80%;
                 height: 45px;
                 margin-left: auto;
+                text-align: right;
               }
             }
           }
@@ -408,7 +416,7 @@
      flex-direction: column;
     .submit-btn__sell-btn{
       padding: 12px 0px 12px 0px;
-      background-color: red;
+      background-color: #3CCACE;
       font-size: 22px;
       font-weight: 600;
       border-radius: 10px;

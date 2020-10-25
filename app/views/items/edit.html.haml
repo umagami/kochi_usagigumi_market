@@ -31,9 +31,9 @@
         - if @item.item_images.length != 5
           %li{class: "file_#{@item.item_images.length}", "data-index" => "#{@item.item_images.length}"}
             %input.js-file{:id => "item_item_images_attributes_#{@item.item_images.length}_image_url", :name => "item[item_images_attributes][#{@item.item_images.length}][image_url]", :type => "file"}/
-        %label{for: "item_item_images_attributes_#{@item.item_images.length}_image_url", class: "image-label_#{@item.item_images.length}"}
-          .image-icon
-            %i.fas.fa-camera.icon
+          %label{for: "item_item_images_attributes_#{@item.item_images.length}_image_url", class: "image-label_#{@item.item_images.length}"}
+            .image-icon
+              %i.fas.fa-camera.icon
 
       .sell-container__content
         .sell-title
@@ -52,7 +52,10 @@
         .sell-container__content__word-count
 
         .sell-container__content
-          %h3.sell-sub-head 商品の詳細
+          %h3.sell-sub-head 
+            商品の詳細
+            = link_to "#" do
+              %i.far.fa-question-circle
           .sell-container__content__details
             .sell-title
               %h3.sell-title__text3
@@ -62,7 +65,6 @@
             .sell-collection_select
               = f.label :category_id, {class: 'sell-collection_select__label'} do
                 = f.collection_select :category_id, Category.roots, :id, :name, {prompt: "選択して下さい"},class: "select-category", id: "parent-category"
-                %i.fas.fa-chevron-down
 
             .sell-title
               %h3.sell-title__text4
@@ -72,7 +74,6 @@
             .sell-collection_select
               = f.label :item_condition_id, {class: 'sell-collection_select__label'} do
                 = f.collection_select :item_condition_id, ItemCondition.all, :id, :name, {prompt: '選択して下さい'},{ class: 'sell-collection_select__input', id: 'condition-select', required: "required"}
-                %i.fas.fa-chevron-down
 
         .sell-container__content
           %h3.sell-sub-head2
@@ -88,7 +89,6 @@
             .sell-collection_select
               = f.label :postage_payer_id, {class: 'sell-collection_select__label'} do
                 = f.collection_select :postage_payer_id, PostagePayer.all, :id, :name, {prompt: '選択して下さい'},{ class: 'sell-collection_select__input', id: 'deliverycost-select', required: "required"}
-                %i.fas.fa-chevron-down
 
             .sell-title
               %h3.sell-title__text6
@@ -98,7 +98,6 @@
             .sell-collection_select
               = f.label :prefecture_id, class: 'sell-collection_select__label' do
                 = f.collection_select :prefecture_id, Prefecture.all, :id, :name, {prompt: '選択して下さい'},{ class: 'sell-collection_select__input', id: 'pref-select', required: "required"}
-                %i.fas.fa-chevron-down
 
             .sell-title
               %h3.sell-title__text7
@@ -108,12 +107,9 @@
             .sell-collection_select
               = f.label :preparation_day_id, class: 'sell-collection_select__label' do
                 = f.collection_select :preparation_day_id, PreparationDay.all, :id, :name, {prompt: '選択して下さい'},{ class: 'sell-collection_select__input', id: 'delivery_days-select', required: "required"}
-                %i.fas.fa-chevron-down
 
         .sell-container__content
           %h3.sell-sub-head3
-            = link_to "#" do
-              %i.far.fa-question-circle
           .sell-container__content__price
             .sell-title
               %h3.sell-title__text8

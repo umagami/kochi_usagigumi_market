@@ -57,7 +57,6 @@
             .sell-collection_select
               = f.label :category_id, {class: 'sell-collection_select__label'} do
                 = f.collection_select :category_id, Category.roots, :id, :name, {prompt: "選択して下さい"},class: "select-category", id: "parent-category"
-                %i.fas.fa-chevron-down
 
             .sell-title
               %h3.sell-title__text4
@@ -67,7 +66,6 @@
             .sell-collection_select
               = f.label :item_condition_id, {class: 'sell-collection_select__label'} do
                 = f.collection_select :item_condition_id, ItemCondition.all, :id, :name, {prompt: '選択して下さい'},{ class: 'sell-collection_select__input', id: 'condition-select', required: "required"}
-                %i.fas.fa-chevron-down
 
         .sell-container__content
           %h3.sell-sub-head2
@@ -83,7 +81,6 @@
             .sell-collection_select
               = f.label :postage_payer_id, {class: 'sell-collection_select__label'} do
                 = f.collection_select :postage_payer_id, PostagePayer.all, :id, :name, {prompt: '選択して下さい'},{ class: 'sell-collection_select__input', id: 'deliverycost-select', required: "required"}
-                %i.fas.fa-chevron-down
 
             .sell-title
               %h3.sell-title__text6
@@ -93,7 +90,6 @@
             .sell-collection_select
               = f.label :prefecture_id, class: 'sell-collection_select__label' do
                 = f.collection_select :prefecture_id, Prefecture.all, :id, :name, {prompt: '選択して下さい'},{ class: 'sell-collection_select__input', id: 'pref-select', required: "required"}
-                %i.fas.fa-chevron-down
 
             .sell-title
               %h3.sell-title__text7
@@ -103,7 +99,6 @@
             .sell-collection_select
               = f.label :preparation_day_id, class: 'sell-collection_select__label' do
                 = f.collection_select :preparation_day_id, PreparationDay.all, :id, :name, {prompt: '選択して下さい'},{ class: 'sell-collection_select__input', id: 'delivery_days-select', required: "required"}
-                %i.fas.fa-chevron-down
 
         .sell-container__content
           %h3.sell-sub-head3
