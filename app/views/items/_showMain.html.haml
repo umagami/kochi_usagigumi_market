@@ -12,7 +12,7 @@
                 %ul
                   - @item.item_images.each do |image|
                     %li
-                      = image_tag image.image_url.url, height: '87px', width: '140px'
+                      = image_tag image.image_url.url, height: '90px', width: '120px'
           .itemInfo__itemPrice
             %span
               ¥
@@ -139,10 +139,10 @@
         .link
           .links
             .link-left
-              = link_to item_path(@item.id + 1) do
+              = link_to item_path(@item.id - 1) do
                 << 前の商品
             .link-right
-              = link_to item_path(@item.id - 1) do
+              = link_to item_path(@item.id + 1) do
                 後ろの商品 >>
         .etcItems
           =link_to "#{@categoryParent.name}  をもっと見る"

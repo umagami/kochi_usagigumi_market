@@ -1,3 +1,216 @@
+#image-box {
+  display: flex;
+  #previews {
+    width: auto;
+    display: flex;
+    .content {
+      margin: 15px;
+      .image-option {
+        display: flex;
+        justify-content: center;
+        .edit {
+          border: 1px dashed #7a8586;
+          margin-left: 10px;
+          padding: 2px 3px;
+        }
+        .js-remove {
+          border: 1px dashed #ffadad;
+          margin-right: 10px;
+          padding: 2px 4px;
+        }
+      }
+    }
+  }
+
+  .image-icon {
+    display: flex;
+    width: 100px;
+    height: 100px;
+    margin: 15px;
+    border: 3px dashed #3CCACE;
+    border-radius: 10px;
+    justify-content: center;
+      .icon {
+        margin: auto 0;
+        color: #3CCACE;
+        font-size: 40px;
+      }
+  }
+  .file_0 {
+    .js-file {
+      display: none;
+    }
+  }
+  .file_1 {
+    .js-file {
+      display: none;
+    }
+  }
+  .file_2 {
+    .js-file {
+      display: none;
+    }
+  }
+  .file_3 {
+    .js-file {
+      display: none;
+    }
+  }
+  .file_4 {
+    .js-file {
+      display: none;
+    }
+  }
+  .file_5 {
+    .js-file {
+      display: none;
+    }
+  }
+  .file_6 {
+    .js-file {
+      display: none;
+    }
+  }
+  .file_7 {
+    .js-file {
+      display: none;
+    }
+  }
+  .file_8 {
+    .js-file {
+      display: none;
+    }
+  }
+  .file_9 {
+    .js-file {
+      display: none;
+    }
+  }
+  .file_10 {
+    .js-file {
+      display: none;
+    }
+  }
+  .file_11 {
+    .js-file {
+      display: none;
+    }
+  }
+  .file_12 {
+    .js-file {
+      display: none;
+    }
+  }
+  .file_13 {
+    .js-file {
+      display: none;
+    }
+  }
+  .file_14 {
+    .js-file {
+      display: none;
+    }
+  }
+  .file_15 {
+    .js-file {
+      display: none;
+    }
+  }
+  .file_16 {
+    .js-file {
+      display: none;
+    }
+  }
+  .file_17 {
+    .js-file {
+      display: none;
+    }
+  }
+  .file_18 {
+    .js-file {
+      display: none;
+    }
+  }
+  .file_19 {
+    .js-file {
+      display: none;
+    }
+  }
+  .file_20 {
+    .js-file {
+      display: none;
+    }
+  }
+  .file_21 {
+    .js-file {
+      display: none;
+    }
+  }
+  .file_22 {
+    .js-file {
+      display: none;
+    }
+  }
+  v
+  .file_23 {
+    .js-file {
+      display: none;
+    }
+  }
+  .file_24 {
+    .js-file {
+      display: none;
+    }
+  }
+  .file_25 {
+    .js-file {
+      display: none;
+    }
+  }
+  .file_26 {
+    .js-file {
+      display: none;
+    }
+  }
+  .file_27 {
+    .js-file {
+      display: none;
+    }
+  }
+  .file_28 {
+    .js-file {
+      display: none;
+    }
+  }
+  .file_29 {
+    .js-file {
+      display: none;
+    }
+  }
+  .file_30 {
+    .js-file {
+      display: none;
+    }
+  }
+  .file_31 {
+    .js-file {
+      display: none;
+    }
+  }
+  .file_32 {
+    .js-file {
+      display: none;
+    }
+  }
+  .file_33 {
+    .js-file {
+      display: none;
+    }
+  }
+
+
+}
+
 .sell{
   display: flex;
   position: relative;
@@ -5,7 +218,7 @@
   color: rgb(51, 51, 51);
   background-color: #f8f8f8;
   font-size: 14px;
-
+  
 
   .sell__picture__text{
     font-weight: bold;
@@ -41,6 +254,11 @@
               color: gray;
               margin-top: 40px;
               border-top:solid 1px gainsboro;
+              color: gray;
+              border-top:solid 1px gainsboro;
+              padding-top: 20px;
+              padding-bottom: 0px;
+              display: flex;
             }
 
             .sell-sub-head3{
@@ -52,6 +270,7 @@
               font-size: 15px;
               margin-bottom: 15px;
               &__text{
+                padding-top: 20px;
                 font-weight: bold;
                 border-top:solid 1px gainsboro
               }
@@ -119,14 +338,15 @@
             }
 
             .sell-collection_select{
+              
               .select-category{
                 width: 100%;
-                height: 45px;
+                height: 35px;
                 margin-bottom: 5px;
               }
               .sell-collection_select__input{
                 width: 100%;
-                height: 45px;
+                height: 35px;
               }
             }
 
@@ -180,6 +400,7 @@
                 width: 80%;
                 height: 45px;
                 margin-left: auto;
+                text-align: right;
               }
             }
           }
@@ -195,7 +416,7 @@
      flex-direction: column;
     .submit-btn__sell-btn{
       padding: 12px 0px 12px 0px;
-      background-color: red;
+      background-color: #3CCACE;
       font-size: 22px;
       font-weight: 600;
       border-radius: 10px;
@@ -208,4 +429,5 @@
     }
    }
 }
+
 
