@@ -148,16 +148,15 @@
           =link_to "#{@categoryParent.name}  をもっと見る"
         .productLists
           - @items.each do |item|
-            = link_to item_path(item.id) do
-              .productContent-show
-                %figure.productContent-show__image
-                  .productContent-show__image__main
-                    = image_tag item.item_images[0].image_url.url, class: "img"
-                .productContent-show__info
-                  %h3.name
-                    = item.name
-                  %ul
-                    %li
-                      =item.price
-                  %p
-                    = item.postage_payer.name
+            .productContent
+              %figure.productContent__image
+                .productContent__image__main
+                  = image_tag item.item_images[0].image_url.url, class: "img"
+              .productContent__info
+                %h3.name
+                  = item.name
+                %ul
+                  %li
+                    =item.price
+                %p
+                  = item.postage_payer.name

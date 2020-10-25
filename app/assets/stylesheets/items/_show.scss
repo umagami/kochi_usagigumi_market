@@ -41,6 +41,7 @@ img {
       }
       ul {
         display: flex;
+        object-fit: fill;
         justify-content: center;
         margin-top: 10px;
       }
@@ -66,6 +67,12 @@ img {
 
 .itemTable {
   margin-bottom: 20px;
+  th {
+    text-align: center;
+  }
+  td {
+    padding-left: 10px;
+  }
 }
 
 table {
@@ -297,6 +304,7 @@ td {
   width: 60%;
   font-size: 18px;
   border-radius: 100px;
+  margin: 20px 0 20px 0;
 }
 
 #comment_body {
@@ -364,6 +372,7 @@ td {
   &__info {
     background-color: white;
     color: #333;
-    padding: 16px;
+    padding: 16px
+      
   }
 }

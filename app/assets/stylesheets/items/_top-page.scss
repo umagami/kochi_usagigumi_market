@@ -384,34 +384,15 @@
               height: 150px;
               object-fit: cover;
             }
-            .sold{
-              width: 0;
-              height: 0;
-              border-width: 120px 120px 0 0;
-              border-color: #ea352d transparent transparent transparent;
-              display: block;
-              position: absolute;
-              top: 0;
-              left: 0;
-              z-index: 1;
-              border-style: solid;
-              .sold-inner{
-                top: -90px;
-                font-size: 30px;
-                position: absolute;
-                left: 0;
-                z-index: 2;
-                color: #fff;
-                transform: rotate(-45deg);
-                letter-spacing: 2px;
-                font-weight: 600;
-              }
-            }
           }
           &__info {
             background-color: white;
             color: #333;
-            padding: 16px
+            padding: 16px;
+             .shipping {
+                font-size: 13px;
+                color: gray;
+              }
               
           }
         }
