@@ -35,7 +35,7 @@ $(window).on('load', ()=> {
   lastIndex = $('.js-file_group:last').data('index');
   fileIndex.splice(0, lastIndex);
   console.log($('.content').length)
-  if ($('.content').length != 1) {
+  if ($('li').length != 1) {
     fileIndex.splice(0, $('.content').length);
   }
   console.log(fileIndex)

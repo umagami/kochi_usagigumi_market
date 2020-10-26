@@ -60,7 +60,6 @@ window.addEventListener('load', function () {
             selectNoValue(categories)
         })
         .fail(function () {
-          alert('error');
         })
   });
 });
