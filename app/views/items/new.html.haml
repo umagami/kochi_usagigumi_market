@@ -24,11 +24,22 @@
         = f.fields_for :item_images do |image|
           %li{class: "file_#{image.index}", "data-index" => "#{image.index}"}
             = image.file_field :image_url, class: 'js-file'
-            - if @item.persisted?
-              = image.check_box :_destroy, data:{ index: image.index }, class: 'hidden-destroy'
-          %label{for: "item_item_images_attributes_#{@item.item_images.length - 1}_image_url", class: "image-label"}
+          - if @item.persisted?
+            = image.check_box :_destroy, data:{ index: image.index }, class: 'hidden-destroy'
+        - if @item.item_images.length != 5
+          %li{class: "file_#{@item.item_images.length}", "data-index" => "#{@item.item_images.length}"}
+            %input.js-file{:id => "item_item_images_attributes_#{@item.item_images.length}_image_url", :name => "item[item_images_attributes][#{@item.item_images.length}][image_url]", :type => "file"}/
+          %label{for: "item_item_images_attributes_#{@item.item_images.length}_image_url", class: "image-label"}
             .image-icon
               %i.fas.fa-camera.icon
+              
+          -# %li{class: "file_#{image.index}", "data-index" => "#{image.index}"}
+          -#   = image.file_field :image_url, class: 'js-file'
+          -#   - if @item.persisted?
+          -#     = image.check_box :_destroy, data:{ index: image.index }, class: 'hidden-destroy'
+          -# %label{for: "item_item_images_attributes_#{@item.item_images.length - 1}_image_url", class: "image-label"}
+          -#   .image-icon
+          -#     %i.fas.fa-camera.icon
 
       .sell-container__content
         .sell-title
