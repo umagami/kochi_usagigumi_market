@@ -29,6 +29,8 @@ class Item < ApplicationRecord
       category_validation = category
       if category_validation == nil
         errors.add(:category, "カテゴリーを最後まで選択してください")
+      elsif category_validation.ancestry == nil
+        errors.add(:category, "カテゴリーを最後まで選択してください")
       elsif category_validation.ancestry.count("/") == 0
         errors.add(:category, "カテゴリーを最後まで選択してください")
       end
