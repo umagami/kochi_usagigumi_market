@@ -31,7 +31,7 @@
         - if @item.item_images.length != 5
           %li{class: "file_#{@item.item_images.length}", "data-index" => "#{@item.item_images.length}"}
             %input.js-file{:id => "item_item_images_attributes_#{@item.item_images.length}_image_url", :name => "item[item_images_attributes][#{@item.item_images.length}][image_url]", :type => "file"}/
-          %label{for: "item_item_images_attributes_#{@item.item_images.length}_image_url", class: "image-label_#{@item.item_images.length}"}
+          %label{for: "item_item_images_attributes_#{@item.item_images.length}_image_url", class: "image-label"}
             .image-icon
               %i.fas.fa-camera.icon
 
@@ -64,7 +64,9 @@
                   必須
             .sell-collection_select
               = f.label :category_id, {class: 'sell-collection_select__label'} do
-                = f.collection_select :category_id, Category.roots, :id, :name, {prompt: "選択して下さい"},class: "select-category", id: "parent-category"
+                = f.collection_select :category_id, Category.roots, :id, :name, {selected: @item.category.parent.parent.name},class: "select-category", id: "parent-category"
+                = f.collection_select :category_id, @category_children_array, :id, :name, {selected: @item.category.parent.name},class: "select-category child", id: "parent-category"
+                = f.collection_select :category_id, @category_grandchildren_array, :id, :name, {selected:@item.category.name},class: "select-category grandchild", id: "parent-category"
 
             .sell-title
               %h3.sell-title__text4
