@@ -14,7 +14,7 @@ class Item < ApplicationRecord
     has_many :favorites, dependent: :destroy 
 
     validates :name, :price, :introduction, :prefecture_id,
-    :category_id, :item_condition_id, :postage_payer_id,
+    :item_condition_id, :postage_payer_id,
     :preparation_day_id, :user_id, presence: true
 
     validates :price, presence: true,numericality: {
@@ -22,6 +22,17 @@ class Item < ApplicationRecord
       message: "¥300〜¥9999999の間で入力してください"
 
     }
+
+    validate :category_validation
+
+    def category_validation
+      category_validation = category
+      if category_validation == nil
+        errors.add(:category, "カテゴリーを最後まで選択してください")
+      elsif category_validation.ancestry.count("/") == 0
+        errors.add(:category, "カテゴリーを最後まで選択してください")
+      end
+    end
 
     validates :item_images, length: {minimum: 1, maximum: 5, message: "の数が不正です"}
 
