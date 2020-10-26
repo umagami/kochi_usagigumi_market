@@ -31,7 +31,7 @@
         - if @item.item_images.length != 5
           %li{class: "file_#{@item.item_images.length}", "data-index" => "#{@item.item_images.length}"}
             %input.js-file{:id => "item_item_images_attributes_#{@item.item_images.length}_image_url", :name => "item[item_images_attributes][#{@item.item_images.length}][image_url]", :type => "file"}/
-          %label{for: "item_item_images_attributes_#{@item.item_images.length}_image_url", class: "image-label_#{@item.item_images.length}"}
+          %label{for: "item_item_images_attributes_#{@item.item_images.length}_image_url", class: "image-label"}
             .image-icon
               %i.fas.fa-camera.icon
 
