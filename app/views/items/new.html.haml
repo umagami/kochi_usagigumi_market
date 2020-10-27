@@ -32,7 +32,7 @@
           %label{for: "item_item_images_attributes_#{@item.item_images.length}_image_url", class: "image-label"}
             .image-icon
               %i.fas.fa-camera.icon
-              
+
           -# %li{class: "file_#{image.index}", "data-index" => "#{image.index}"}
           -#   = image.file_field :image_url, class: 'js-file'
           -#   - if @item.persisted?
@@ -124,7 +124,7 @@
             .sell-container__content__price__form
               = f.label :price, class: 'sell-container__content__price__form__label' do
                 ¥
-              = f.number_field :price, {placeholder: '0', value: '', autocomplete:"off", class: 'sell-container__content__price__form__box', required: "required"}
+              = f.number_field :price, {placeholder: '0',value: @item.price, autocomplete:"off", class: 'sell-container__content__price__form__box', required: "required"}
 
           .sell-container__content__commission
             .sell-container__content__commission__left
